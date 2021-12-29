@@ -3434,6 +3434,13 @@ blockquote footer cite:before {
   -moz-background-size: cover;
   background-size: cover;
 }
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  content: '';
+}
 #footer-wrap {
   position: relative;
   padding: 2rem 1rem;
@@ -3759,7 +3766,6 @@ blockquote footer cite:before {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
-  --font-color: #000;
   background: -webkit-linear-gradient(135deg, rgba(238,119,82,0.25) 0%, rgba(231,60,126,0.25) 25%, rgba(35,166,213,0.25) 50%, rgba(35,213,171,0.25) 100%);
   background: -moz-linear-gradient(135deg, rgba(238,119,82,0.25) 0%, rgba(231,60,126,0.25) 25%, rgba(35,166,213,0.25) 50%, rgba(35,213,171,0.25) 100%);
   background: -o-linear-gradient(135deg, rgba(238,119,82,0.25) 0%, rgba(231,60,126,0.25) 25%, rgba(35,166,213,0.25) 50%, rgba(35,213,171,0.25) 100%);
@@ -4468,7 +4474,7 @@ blockquote footer cite:before {
   overflow-wrap: break-word;
 }
 #article-container a {
-  color: #171f50;
+  color: #0076e1;
 }
 #article-container a:hover {
   text-decoration: underline;
@@ -4838,8 +4844,8 @@ blockquote footer cite:before {
   overflow: hidden;
   margin: 3px;
   width: calc(33.333% - 6px);
-  height: 200px;
-  background: #000;
+  height: 100px;
+  background: #0d293e;
   vertical-align: bottom;
 }
 .relatedPosts > .relatedPosts-list > div:hover .cover {
@@ -6188,9 +6194,66 @@ blockquote.pullquote.right {
 }
 [data-theme='dark'] #page-header.nav-fixed > #nav,
 [data-theme='dark'] #page-header.not-top-img > #nav {
-  background: rgba(18,18,18,0.8);
+  background: -webkit-linear-gradient(135deg, rgba(25,25,112,0.25) 0%, rgba(46,139,87,0.25) 25%, rgba(139,0,139,0.25) 50%, rgba(160,82,45,0.25) 100%);
+  background: -moz-linear-gradient(135deg, rgba(25,25,112,0.25) 0%, rgba(46,139,87,0.25) 25%, rgba(139,0,139,0.25) 50%, rgba(160,82,45,0.25) 100%);
+  background: -o-linear-gradient(135deg, rgba(25,25,112,0.25) 0%, rgba(46,139,87,0.25) 25%, rgba(139,0,139,0.25) 50%, rgba(160,82,45,0.25) 100%);
+  background: -ms-linear-gradient(135deg, rgba(25,25,112,0.25) 0%, rgba(46,139,87,0.25) 25%, rgba(139,0,139,0.25) 50%, rgba(160,82,45,0.25) 100%);
+  background: linear-gradient(-45deg, rgba(25,25,112,0.25) 0%, rgba(46,139,87,0.25) 25%, rgba(139,0,139,0.25) 50%, rgba(160,82,45,0.25) 100%);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
+  -webkit-background-size: 400% 400%;
+  -moz-background-size: 400% 400%;
+  background-size: 400% 400%;
+  -webkit-animation: bgposition 15s infinite linear alternate !important;
+  -moz-animation: bgposition 15s infinite linear alternate !important;
+  -o-animation: bgposition 15s infinite linear alternate !important;
+  -ms-animation: bgposition 15s infinite linear alternate !important;
+  animation: bgposition 15s infinite linear alternate !important;
+  -webkit-animation: bgposition 15s infinite linear alternate !important;
+}
+@-moz-keyframes bgposition {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@-webkit-keyframes bgposition {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@-o-keyframes bgposition {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@keyframes bgposition {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 [data-theme='dark'] #post-comment #comment-switch {
   background: #2c2c2c !important;

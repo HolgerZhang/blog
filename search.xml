@@ -23,9 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-01</title>
+    <title>人工智能与知识工程 第一部分</title>
     <url>/2021/12/29/AI-01/</url>
-    <content><![CDATA[<h1 id="知识表示方法"><a class="markdownIt-Anchor" href="#知识表示方法"></a> 知识表示方法</h1>
+    <content><![CDATA[<h1 id="知识表示"><a class="markdownIt-Anchor" href="#知识表示"></a> 知识表示</h1>
 <h2 id="状态空间法"><a class="markdownIt-Anchor" href="#状态空间法"></a> 状态空间法</h2>
 <p><strong>状态</strong>：描述某类不同事物间的差别而引入的一组<u><span>最少变量</span></u>q0,q1,…,qn的有序集合</p>
 <p><strong>算符</strong>：使问题从一种状态变化为另一种状态的手段。（走步、过程、规划、数学算子、运算符号、逻辑符号等）</p>
@@ -117,6 +117,321 @@
 <h2 id="框架表示"><a class="markdownIt-Anchor" href="#框架表示"></a> 框架表示</h2>
 <p>框架可以由框架名、槽、侧面和值四部分组成。框架一般可表示成如下格式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;框架名&gt;</span><br><span class="line">&lt;槽名1&gt;&lt;侧面11&gt;&lt;值111&gt; …</span><br><span class="line">       &lt;侧面12&gt;&lt;值121&gt; …</span><br><span class="line">    …</span><br><span class="line">&lt;槽名2&gt;&lt;侧面21&gt;&lt;值211&gt; …</span><br><span class="line">       &lt;侧面22&gt;&lt;值221&gt; …</span><br><span class="line">    …</span><br><span class="line">&lt;槽名n&gt;&lt;侧面n1&gt;&lt;值n11&gt; …</span><br><span class="line">    …</span><br><span class="line">       &lt;侧面nm&gt;&lt;值nm1&gt; …</span><br></pre></td></tr></table></figure>
+<h1 id="确定性推理"><a class="markdownIt-Anchor" href="#确定性推理"></a> 确定性推理</h1>
+<h2 id="分类"><a class="markdownIt-Anchor" href="#分类"></a> 分类</h2>
+<h3 id="按推出结论的途径"><a class="markdownIt-Anchor" href="#按推出结论的途径"></a> 按推出结论的途径</h3>
+<ul>
+<li>
+<p><strong>演绎推理</strong> (deductive reasoning) :  一般  → 个别</p>
+<p>三段论法：大前提、小前提、结论</p>
+</li>
+<li>
+<p><strong>归纳推理</strong> (inductive reasoning): 个别 → 一般</p>
+<ul>
+<li><strong>完全归纳推理</strong>（必然性推理）</li>
+<li><strong>不完全归纳推理</strong>（非必然性推理）</li>
+</ul>
+</li>
+<li>
+<p><strong>默认推理</strong>（default reasoning，缺省推理）：知识不完全的情况下假设某些条件已经具备所进行的推理。</p>
+<img src="https://repo.holgerbest.top/img/ai-1-2.png" style="zoom:48%;" />
+</li>
+</ul>
+<h3 id="按广泛性"><a class="markdownIt-Anchor" href="#按广泛性"></a> 按广泛性</h3>
+<ul>
+<li><strong>确定性推理</strong>：推理时所用的知识与证据都是确定的，推出的结论也是确定的，其真值或者为真或者为假。</li>
+<li><strong>不确定性推理</strong>：推理时所用的知识与证据不都是确定的，推出的结论也是不确定的。</li>
+</ul>
+<h3 id="按结论是否越来越接近目标"><a class="markdownIt-Anchor" href="#按结论是否越来越接近目标"></a> 按结论是否越来越接近目标</h3>
+<ul>
+<li><strong>单调推理</strong>：随着推理向前推进及新知识的加入，推出的结论越来越接近最终目标。</li>
+<li><strong>非单调推理</strong>：由于新知识的加入，不仅没有加强已推出的结论，反而要否定它，使推理退回到前面的某一步，重新开始。</li>
+</ul>
+<h3 id="按是否利用启发性知识"><a class="markdownIt-Anchor" href="#按是否利用启发性知识"></a> 按是否利用启发性知识</h3>
+<p><strong>启发性知识</strong>：与问题有关且能加快推理过程、提高搜索效率的知识。</p>
+<ul>
+<li><strong>启发式推理</strong></li>
+<li><strong>非启发式推理</strong></li>
+</ul>
+<h2 id="方向"><a class="markdownIt-Anchor" href="#方向"></a> 方向</h2>
+<ul>
+<li><strong>正向推理</strong>（事实驱动推理）: 已知事实 →  结论
+<ul>
+<li>简单，易实现，但目的性不强，效率低。</li>
+</ul>
+</li>
+<li><strong>逆向推理</strong>（目标驱动推理）：以某个假设目标作为出发点，寻找证据。
+<ul>
+<li>主要优点：不必使用与目标无关的知识，目的性强，同时它还有利于向用户提供解释。</li>
+<li>主要缺点：起始目标的选择有盲目性。</li>
+</ul>
+</li>
+<li><strong>混合推理</strong>
+<ul>
+<li>先正向后逆向：先进行正向推理，帮助选择某个目标，即从已知事实演绎出部分结果，然后再用逆向推理证实该目标或提高其可信度；</li>
+<li>先逆向后正向：先假设一个目标进行逆向推理，然后再利用逆向推理中得到的信息进行正向推理，以推出更多的结论</li>
+</ul>
+</li>
+<li><strong>双向推理</strong>：正向推理与逆向推理同时进行，且在推理过程中的某一步骤上“<strong>碰头</strong>”的一种推理。</li>
+</ul>
+<h2 id="冲突消解策略"><a class="markdownIt-Anchor" href="#冲突消解策略"></a> <strong>冲突消解策略</strong></h2>
+<ol>
+<li>按针对性排序</li>
+<li>按已知事实的新鲜性排序</li>
+<li>按匹配度排序</li>
+<li>按条件个数排序</li>
+<li>按上下文限制排序</li>
+<li>按冗余限制排序</li>
+<li>根据领域问题的特点排序</li>
+</ol>
+<h2 id="自然演绎推理"><a class="markdownIt-Anchor" href="#自然演绎推理"></a> <strong>自然演绎推理</strong></h2>
+<p><strong>自然演绎推理</strong>：从一组已知为真的事实出发，运用经典逻辑的推理规则推出结论的过程。</p>
+<p>推理规则：P规则、T规则、假言推理、拒取式推理</p>
+<img src="https://repo.holgerbest.top/img/ai-1-3.png" style="zoom:48%;" />
+<img src="https://repo.holgerbest.top/img/ai-1-4.png" style="zoom:48%;" />
+<p><strong>优点</strong>：</p>
+<ul>
+<li>表达定理证明过程自然，易理解。</li>
+<li>拥有丰富的推理规则，推理过程灵活。</li>
+<li>便于嵌入领域启发式知识。</li>
+</ul>
+<p><strong>缺点</strong>：易产生组合爆炸，得到的中间结论一般呈指数形式递增。</p>
+<h2 id="归结反演"><a class="markdownIt-Anchor" href="#归结反演"></a> 归结反演</h2>
+<h3 id="谓词公式化为子句集"><a class="markdownIt-Anchor" href="#谓词公式化为子句集"></a> 谓词公式化为子句集</h3>
+<ul>
+<li>原子（atom）谓词公式： 一个不能再分解的命题。</li>
+<li>文字（literal）：原子谓词公式及其否定。</li>
+<li><strong>子句</strong>（clause）：任何文字的析取式。任何文字本身也都是子句。</li>
+<li><strong>空子句</strong>（<strong>NIL</strong>）：不包含任何文字的子句。</li>
+<li>子句集：由子句构成的集合。</li>
+</ul>
+<hr />
+<ol>
+<li>
+<p>消去谓词公式中的“-&gt;”和“&lt;-&gt;”符号</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi mathvariant="normal">¬</mi><mi>P</mi><mo>∨</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P \to Q \iff \neg P \vee Q
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">¬</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>↔</mo><mi>Q</mi><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>Q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P \leftrightarrow Q \iff (P\wedge Q)\vee(\neg P\wedge \neg Q)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathdefault">Q</span><span class="mclose">)</span></span></span></span></span></p>
+</li>
+<li>
+<p>把否定符号移到紧靠谓词的位置上</p>
+<img src="https://repo.holgerbest.top/img/ai-1-5.png" style="zoom:48%;" />
+</li>
+<li>
+<p>变量标准化</p>
+<img src="https://repo.holgerbest.top/img/ai-1-6.png" style="zoom:48%;" />
+</li>
+<li>
+<p>消去<strong>存在量词</strong></p>
+<ol>
+<li>存在量词不出现在全称量词的辖域内。</li>
+<li>存在量词出现在一个或者多个全称量词的辖域内。</li>
+</ol>
+<img src="https://repo.holgerbest.top/img/ai-1-7.png" style="zoom:48%;" />
+</li>
+<li>
+<p>化为前束形：<code>前束形=（前缀）&#123;母式&#125;</code></p>
+</li>
+<li>
+<p>化为 Skolem 标准形 <img src="https://repo.holgerbest.top/img/image-20211230154606634.png" alt="image-20211230154606634" /></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>∨</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>∧</mo><mi>R</mi><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mo stretchy="false">(</mo><mi>P</mi><mo>∨</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∨</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\vee (Q\wedge R) \iff (P\vee Q)\wedge(P\vee R)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">Q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>∧</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>∨</mo><mi>R</mi><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>∨</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\wedge (Q\vee R) \iff (P\wedge Q)\vee(P\wedge R)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">Q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></span></p>
+</li>
+<li>
+<p>略去<strong>全称量词</strong></p>
+</li>
+<li>
+<p>消去合取词 （转换为集合）</p>
+</li>
+<li>
+<p>子句变量标准化 （使用不同的变量）</p>
+<img src="https://repo.holgerbest.top/img/ai-1-8.png" style="zoom:48%;" />
+</li>
+</ol>
+<hr />
+<h3 id="鲁滨逊归结原理"><a class="markdownIt-Anchor" href="#鲁滨逊归结原理"></a> 鲁滨逊归结原理</h3>
+<p>基本思想：</p>
+<ul>
+<li>检查子句集 S 中是否包含<strong>空子句</strong>，若包含，则 S <strong>不可满足</strong>。</li>
+<li>若不包含，在 S 中选择合适的子句进行归结，一旦归结出<strong>空子句</strong>，就说明 S 是不可满足的。</li>
+</ul>
+<blockquote>
+<p>若未能归结得空子句，则既不能说明 S 是可满足的，也不能说明 S 是不可满足的。</p>
+</blockquote>
+<img src="https://repo.holgerbest.top/img/ai-1-9.png" style="zoom:88%;" />
+<img src="https://repo.holgerbest.top/img/ai-1-10.png" style="zoom:48%;" />
+<h3 id="归结反演-2"><a class="markdownIt-Anchor" href="#归结反演-2"></a> 归结反演</h3>
+<ol>
+<li>将已知前提表示为谓词公式<em>F</em>。</li>
+<li>将待证明的结论表示为谓词公式<em>Q</em>，并<strong>否定</strong>得到﹁ <em>Q</em> 。</li>
+<li>把谓词公式集{<em>F</em>，﹁<em>Q</em>} 化为子句集<em>S</em>。</li>
+<li>应用归结原理对子句集<em>S</em>中的子句进行归结，并把每次归结得到的归结式都并入到<em>S</em>中。如此反复进行，若出现了<strong>空子句</strong>，则停止归结，此时就证明了<em>Q</em>为真。</li>
+</ol>
+<img src="https://repo.holgerbest.top/img/ai-1-11.png" style="zoom:48%;" />
+<h3 id="应用归结原理求解问题"><a class="markdownIt-Anchor" href="#应用归结原理求解问题"></a> 应用归结原理求解问题</h3>
+<ol>
+<li>已知前提 F 用谓词公式表示，并化为子句集 S ；</li>
+<li>把待求解的问题 Q 用谓词公式表示，并<strong>否定</strong> Q，再与  <em>ANSWER</em> 构成<strong>析取式</strong>（﹁ Q ∨ <em>ANSWER</em> ）；</li>
+<li>把（﹁ Q ∨ ANSWER） 化为子句集，并入到子句集 S中，得到子句集S’；</li>
+<li>对子句集S’应用归结原理进行归结，若得到归结式 <em>ANSWER</em> ，则答案就在 <em>ANSWER</em> 中。</li>
+</ol>
+<img src="https://repo.holgerbest.top/img/ai-1-12.png" style="zoom:48%;" />
+<h1 id="不确定性推理"><a class="markdownIt-Anchor" href="#不确定性推理"></a> 不确定性推理</h1>
+<h2 id="可信度方法"><a class="markdownIt-Anchor" href="#可信度方法"></a> 可信度方法</h2>
+<p><strong>可信度</strong>：根据经验对一个事物或现象为真的<strong>相信程度</strong>。</p>
+<p>C-F模型：<code>IF E THEN H (CF(H, E))</code></p>
+<blockquote>
+<p><code>CF(H, E)</code>：可信度因子。范围[-1, 1]，&gt; 0 越大越支持 H 为真；&lt; 0越小越支持 H 为假；=0无关。</p>
+</blockquote>
+<ul>
+<li>静态强度 CF（H，E）：知识的强度，即当 E 所对应的证据为<strong>真</strong>时对 H 的<strong>影响程度</strong>。</li>
+<li>动态强度 CF（E）：证据 E 当前的<strong>不确定性程度</strong>。</li>
+</ul>
+<p><strong>组合证据</strong>：合取（AND）取min，析取（OR）取max</p>
+<p><strong>传递算法</strong>：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo>=</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo separator="true">,</mo><mi>E</mi><mo stretchy="false">)</mo><mo>×</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">CF(H)= CF(H, E) \times \max (0, CF(E))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<p><strong>合成算法</strong>:</p>
+<img src="https://repo.holgerbest.top/img/ai-1-13.png" style="zoom:48%;" />
+<h2 id="证据理论"><a class="markdownIt-Anchor" href="#证据理论"></a> 证据理论</h2>
+<p><strong>概率分配函数</strong>：把D的任意一个子集A都映射为[0，1]上的一个数M(A)。</p>
+<img src="https://repo.holgerbest.top/img/ai-1-14.png" style="zoom:88%;" />
+<p><strong>信任函数</strong>（为真信任度）：Bel(A)为A的所有非空子集B的M(B)之和。</p>
+<img src="https://repo.holgerbest.top/img/ai-1-15.png" style="zoom:88%;" />
+<p><strong>似然函数</strong>（非假信任度）：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-16.png" style="zoom:88%;" />
+<p><strong>证据组合</strong>：概率分配函数的正交和</p>
+<img src="https://repo.holgerbest.top/img/ai-1-17.png" style="zoom:88%;" />
+<p>基于证据理论的不确定性推理的<strong>步骤</strong>：</p>
+<ol>
+<li>
+<p>建立问题的样本空间D。</p>
+</li>
+<li>
+<p>由经验（题目）给出<strong>基本概率分配函数</strong>M。</p>
+<p>利用<strong>传递算法</strong>：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo>=</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo separator="true">,</mo><mi>E</mi><mo stretchy="false">)</mo><mo>×</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">CF(H)= CF(H, E) \times \max (0, CF(E))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<p>以及<strong>合成算法</strong>。</p>
+</li>
+<li>
+<p>计算所关心的子集A的<strong>信任函数值</strong>Bel(A)、<strong>似然函数值</strong>Pl(A)。</p>
+</li>
+<li>
+<p>得出结论为真信任度：Bel(A)，非假信任度：Pl(A)。</p>
+</li>
+</ol>
+
+
+	<div class="row">
+    <embed src="https://repo.holgerbest.top/pdf/ai-ex-4.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<h2 id="模糊推理"><a class="markdownIt-Anchor" href="#模糊推理"></a> 模糊推理</h2>
+<p>模糊逻辑给集合中每一个元素赋予一个介于0和1之间的实数，描述其属于一个集合的强度，该实数称为元素属于一个集合的<strong>隶属度</strong>。集合中所有元素的隶属度全体构成集合的<strong>隶属函数</strong>。</p>
+<img src="https://repo.holgerbest.top/img/ai-1-18.png" style="zoom:88%;" />
+<p>运算：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-19.png" style="zoom:70%;" />
+<p>模糊关系：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-20.png" style="zoom:70%;" />
+<p>模糊关系的合成：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-21.png" style="zoom:50%;" />
+<ul>
+<li>最大-最小合成：<strong>乘积取小</strong>，<strong>求和取大</strong></li>
+<li>最大-代数合成：<strong>乘积代数运算</strong>，<strong>求和取大</strong></li>
+</ul>
+<p><strong>模糊推理</strong>：已知 A-&gt;B，给定输入A’，计算：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>=</mo><msup><mi>A</mi><mi>T</mi></msup><mo>∘</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">R = A^T \circ B
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8913309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>B</mi><mo mathvariant="normal">′</mo></msup><mo>=</mo><msup><mi>A</mi><mo mathvariant="normal">′</mo></msup><mo>∘</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">B&#x27; = A&#x27; \circ R
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.801892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.801892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span></span></p>
+<p>决策：</p>
+<ul>
+<li>
+<p><strong>最大隶属度法</strong></p>
+</li>
+<li>
+<p><strong>加权平均判决法</strong>：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-22.png" style="zoom:50%;" />
+</li>
+<li>
+<p><strong>中位数法</strong>：</p>
+<img src="https://repo.holgerbest.top/img/ai-1-23.png" style="zoom:50%;" />
+</li>
+</ul>
+<h1 id="搜索"><a class="markdownIt-Anchor" href="#搜索"></a> 搜索</h1>
+<p>搜索：根据问题的实际情况，按照一定的策略或规则，从知识库中寻找可利用的知识，从而构造出一条使问题获得解决的推理路线的过程。</p>
+<p>图搜索策略：</p>
+<ol>
+<li>将问题的初始状态（状态空间图中的初始节点）当作当前节点，选择一适当的算符作用于当前状态，生成一组后继状态（或后继节点）。</li>
+<li>检查这组后继状态中有没有目标状态，如果有，则说明搜索成功，从初始状态到目标状态的一系列算符即是问题的解。</li>
+<li>若没有，则按照某种控制策略从已生成的状态中再选择一个状态作为当前状态。</li>
+<li>重复上述过程，直到目标状态出现或不再有可供操作的状态及算符时为止。</li>
+</ol>
+<h2 id="盲目搜索"><a class="markdownIt-Anchor" href="#盲目搜索"></a> 盲目搜索</h2>
+<p>特点：</p>
+<ul>
+<li>搜索线路是<strong>事先决定好的</strong>，没有利用被求解问题的任何信息。</li>
+<li>在决定要被扩展的节点时，没有考虑节点是否可能出现在解的路径上。</li>
+<li>没有考虑它是否有利于问题的求解以及所求的解是否为最优解。</li>
+</ul>
+<p><strong>宽度优先搜索</strong>：搜索是以<strong>接近起始节点的程度</strong>来依次扩展节点。搜索是<strong>逐层</strong>进行的，在对下一层的任意节点进行搜索之前，必须搜索完本层的所有节点。</p>
+<p><strong>深度优先搜索</strong>：先扩展最新产生的节点，深度相等的节点可以任意排列。</p>
+<blockquote>
+<p>为了避免考虑太长的路径，往往给出一个节点扩展的<strong>最大深度</strong>——深度界限。达到深度界限，认为没有后继节点。</p>
+</blockquote>
+<h2 id="启发式搜索"><a class="markdownIt-Anchor" href="#启发式搜索"></a> 启发式搜索</h2>
+<p>启发式搜索（有信息搜索）：找到一种方法用于排列待扩展节点的顺序，即选择最有希望的节点加以扩展，搜索效率将会大大提高。</p>
+<p><strong>估价函数</strong>：从初始节点经过节点x到达目标节点的<strong>最小代价路径的代价估算值</strong>。</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)=g(x)+h(x)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span></p>
+<ul>
+<li>g(x)从初始节点S<sub>0</sub>到节点x已实际付出的代价；</li>
+<li>h(x)从节点x到目标节点S<sub>g</sub>的最优路径的估价代价。</li>
+</ul>
+<blockquote>
+<p>g(x)的比重越大，搜索方向倾向于广度优先搜索；h(x)的比重越大，越倾向于深度优先搜索。</p>
+</blockquote>
+<hr />
+<p>A*算法：</p>
+<ol>
+<li>
+<p>将开始节点放入Open(开始节点的F和G值都视为0);</p>
+</li>
+<li>
+<p>作如下循环</p>
+<ol>
+<li>在Open表中查找具有最小F值的节点,并把查找到的节点作为当前节点;</li>
+<li>把当前节点从Open表删除, 加入到Closed表;</li>
+<li>对当前节点相邻的每一个节点依次执行以下步骤：
+<ol>
+<li>如果该相邻节点不可通行或者该相邻节点已经在Closed表中,则什么操作也不执行,继续检验下一个节点;</li>
+<li>如果该相邻节点不在Open表中,则将该节点添加到Open表中, 并将该相邻节点的父节点设为当前节点,同时保存该相邻节点的G和F值;</li>
+<li>如果该相邻节点在开放列表中, 则判断若经由当前节点到达该相邻节点的G值是否小于原来保存的G值,若小于,则将该相邻节点的父节点设为当前节点,并重新设置该相邻节点的G和F值.</li>
+</ol>
+</li>
+</ol>
+<p>循环结束条件：</p>
+<ul>
+<li>当终点节点被加入到开放列表作为待检验节点时, 表示路径被找到,此时应终止循环;</li>
+<li>或者当开放列表为空,表明已无可以添加的新节点,而已检验的节点中没有终点节点则意味着路径无法被找到,此时也结束循环</li>
+</ul>
+</li>
+<li>
+<p>从终点节点开始沿父节点遍历, 并保存整个遍历到的节点坐标,遍历所得的节点就是最后得到的路径。</p>
+</li>
+</ol>
+<hr />
+<ul>
+<li>可采纳性：指对于<strong>可求解</strong>的状态空间图（即从状态空间图的初始节点到目标节点有路径存在）来说，如果一个搜索算法能<strong>在有限步内终止</strong>，并且能找到<strong>最优解</strong>。</li>
+<li>单调性：在A*算法中，如果对其估价函数中的h(x)部分，加以适当的单调性限制，就可以使它对所扩展的节点的估价函数值单调递增，从而减少对OPEN表或CLOSED表的检查和调整，提高搜索效率。</li>
+<li>信息性：A*算法的搜索效率主要取决于启发函数h(x),h(x)携带信息的多少。</li>
+</ul>
 ]]></content>
       <categories>
         <category>人工智能</category>

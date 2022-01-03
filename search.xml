@@ -113,8 +113,22 @@
 
 
 <h1 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h1>
-<h2 id="感知机"><a class="markdownIt-Anchor" href="#感知机"></a> 感知机</h2>
-<p>假设输入空间（特征空间）是𝜒∈ℛ<sup>𝑛</sup>，输出空间是𝒴∈{−1,+1}。输入𝑥∈𝜒表示实例的特征向量，对应于输入空间的点；输出𝑦∈𝒴表示实例的类别。由输入空间到输出空间的如下函数：𝑓(𝑥)=𝑠𝑖𝑔𝑛(𝑤∙𝑥+𝑏)   称为<strong>感知机</strong>。</p>
+
+
+	<div class="row">
+    <embed src="https://repo.holgerbest.top/pdf/ai-ml-1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+	<div class="row">
+    <embed src="https://repo.holgerbest.top/pdf/ai-ml-2.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 ]]></content>
       <categories>
         <category>人工智能</category>
@@ -149,7 +163,22 @@
   <entry>
     <title>人工智能与知识工程 第一部分</title>
     <url>/2021/12/29/AI-01/</url>
-    <content><![CDATA[<h1 id="知识表示"><a class="markdownIt-Anchor" href="#知识表示"></a> 知识表示</h1>
+    <content><![CDATA[<h1 id="概论"><a class="markdownIt-Anchor" href="#概论"></a> 概论</h1>
+<p>人工智能就是研究如何使一个计算机系统具有像人一样的智能特征，使其能模拟、延伸、扩展人类智能。</p>
+<p><strong>智能的特征</strong>：具有感知能力、具有记忆与思维能力、具有学习能力、具有行为能力</p>
+<p><strong>基本研究内容</strong>：知识表示、机器感知、机器思维、机器学习、机器行为</p>
+<h2 id="人工智能发展史"><a class="markdownIt-Anchor" href="#人工智能发展史"></a> 人工智能发展史</h2>
+<ul>
+<li>1937年，开发出世界上第一台电子计算机ABC，为人工智能的研究奠定了物质基础</li>
+<li>1943年，M-P模型的提出，奠定了人工神经网络发展的基础。</li>
+<li>1950年，图灵提出了著名的机器智能测试模型——图灵测试</li>
+<li>1956年，麦卡锡(McCarthy)等10人正式提出了“人工智能” 这一术语</li>
+<li>1982: John Hopfield 掀起神经网络的研究</li>
+<li>1986年，Rumelhart发现了BP算法，解决了多层网的学习问题</li>
+<li>1997: IBM 深蓝第一次击败国际象棋世界冠军</li>
+<li>2016：AlphGo成为第一个击败人类职业棋手的软件</li>
+</ul>
+<h1 id="知识表示"><a class="markdownIt-Anchor" href="#知识表示"></a> 知识表示</h1>
 <h2 id="状态空间法"><a class="markdownIt-Anchor" href="#状态空间法"></a> 状态空间法</h2>
 <p><strong>状态</strong>：描述某类不同事物间的差别而引入的一组<u><span>最少变量</span></u>q0,q1,…,qn的有序集合</p>
 <p><strong>算符</strong>：使问题从一种状态变化为另一种状态的手段。（走步、过程、规划、数学算子、运算符号、逻辑符号等）</p>
@@ -177,7 +206,7 @@
 <p>问题的解是<strong>由初始状态到目标状态所用算符的序列</strong></p>
 </li>
 </ul>
-<p>例：从苏州大学去北京天安门的行程安排（状态空间法）</p>
+<p>例：从苏州大学去北京天安门的行程安排（状态空间法）（略）</p>
 <h2 id="产生式表示法"><a class="markdownIt-Anchor" href="#产生式表示法"></a> 产生式表示法</h2>
 <ul>
 <li>确定性规则知识的表示方法： P -&gt; Q 或者 <code>IF P THEN Q</code>
@@ -3068,9 +3097,9 @@ LOAD把存储器中的数据送rd中；STORE把rd中的内容送存储器中。i
         <category>Java学习笔记</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>课堂</tag>
         <tag>学习笔记</tag>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -6033,9 +6062,9 @@ Linux为提高效率，利用程序暂时不用的内存，缓冲读写过的磁
         <category>Linux笔记</category>
       </categories>
       <tags>
-        <tag>Linux命令</tag>
         <tag>Linux</tag>
         <tag>Linux系统状态</tag>
+        <tag>Linux命令</tag>
       </tags>
   </entry>
   <entry>
@@ -6245,9 +6274,9 @@ Linux为提高效率，利用程序暂时不用的内存，缓冲读写过的磁
         <category>Linux笔记</category>
       </categories>
       <tags>
-        <tag>Linux用户</tag>
-        <tag>Linux命令</tag>
         <tag>Linux</tag>
+        <tag>Linux命令</tag>
+        <tag>Linux用户</tag>
       </tags>
   </entry>
   <entry>
@@ -6366,8 +6395,8 @@ Linux为提高效率，利用程序暂时不用的内存，缓冲读写过的磁
         <category>Linux笔记</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>终端</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -6630,9 +6659,9 @@ Linux为提高效率，利用程序暂时不用的内存，缓冲读写过的磁
       </categories>
       <tags>
         <tag>课堂</tag>
+        <tag>数据结构</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -6678,9 +6707,9 @@ Linux为提高效率，利用程序暂时不用的内存，缓冲读写过的磁
       </categories>
       <tags>
         <tag>课堂</tag>
+        <tag>数据结构</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -7441,8 +7470,8 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         <category>Android学习笔记</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>Android</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -8417,9 +8446,9 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         <category>Java学习笔记</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>Java</tag>
         <tag>接口</tag>
       </tags>
   </entry>
@@ -8673,9 +8702,9 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         <category>Java学习笔记</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>Java</tag>
         <tag>继承</tag>
         <tag>重用</tag>
         <tag>组合</tag>
@@ -9109,9 +9138,9 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         <category>Java学习笔记</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>Java</tag>
         <tag>类与对象</tag>
       </tags>
   </entry>
@@ -9368,9 +9397,9 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         <category>Java学习笔记</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>考试不挂科</tag>
         <tag>学习笔记</tag>
-        <tag>Java</tag>
         <tag>类与对象</tag>
       </tags>
   </entry>

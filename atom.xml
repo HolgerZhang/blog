@@ -6,7 +6,7 @@
   <link href="https://blog.holgerbest.top/atom.xml" rel="self"/>
   
   <link href="https://blog.holgerbest.top/"/>
-  <updated>2022-01-03T19:56:58.478Z</updated>
+  <updated>2022-01-09T18:27:59.801Z</updated>
   <id>https://blog.holgerbest.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机网络-期末复习提纲</title>
+    <link href="https://blog.holgerbest.top/2022/01/10/jiwang/"/>
+    <id>https://blog.holgerbest.top/2022/01/10/jiwang/</id>
+    <published>2022-01-09T18:26:15.000Z</published>
+    <updated>2022-01-09T18:27:59.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;https://repo.holgerbest.top/pdf/jwtg.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://blog.holgerbest.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="计算机网络" scheme="https://blog.holgerbest.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>人工智能与知识工程 第二部分</title>
     <link href="https://blog.holgerbest.top/2022/01/01/AI-02/"/>
     <id>https://blog.holgerbest.top/2022/01/01/AI-02/</id>
     <published>2022-01-01T13:24:43.000Z</published>
-    <updated>2022-01-03T19:56:58.478Z</updated>
+    <updated>2022-01-09T18:27:59.797Z</updated>
     
     
     <summary type="html">人工智能与知识工程复习，智能计算与机器学习。</summary>
@@ -34,6 +64,8 @@
     <category term="机器学习" scheme="https://blog.holgerbest.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="人工智能" scheme="https://blog.holgerbest.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
     
   </entry>
   
@@ -61,7 +93,7 @@
     <link href="https://blog.holgerbest.top/2021/12/29/AI-01/"/>
     <id>https://blog.holgerbest.top/2021/12/29/AI-01/</id>
     <published>2021-12-29T09:07:46.000Z</published>
-    <updated>2022-01-03T19:41:41.294Z</updated>
+    <updated>2022-01-09T18:27:59.800Z</updated>
     
     
     <summary type="html">人工智能与知识工程复习，期中考试内容。</summary>
@@ -74,6 +106,8 @@
     <category term="机器学习" scheme="https://blog.holgerbest.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="人工智能" scheme="https://blog.holgerbest.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
     
   </entry>
   
@@ -441,31 +475,6 @@
     <id>https://blog.holgerbest.top/2021/07/02/computer-final-exam/</id>
     <published>2021-07-01T16:01:01.000Z</published>
     <updated>2021-12-28T14:16:56.360Z</updated>
-    
-    
-    <summary type="html">组成期末不挂科指南</summary>
-    
-    
-    
-    <category term="计算机组成" scheme="https://blog.holgerbest.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
-    
-    
-    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
-    
-    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
-    
-    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="组成" scheme="https://blog.holgerbest.top/tags/%E7%BB%84%E6%88%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成知识点 - 指令系统</title>
-    <link href="https://blog.holgerbest.top/2021/07/02/computer-ch5/"/>
-    <id>https://blog.holgerbest.top/2021/07/02/computer-ch5/</id>
-    <published>2021-07-01T16:00:01.000Z</published>
-    <updated>2021-12-28T14:16:56.323Z</updated>
     
     
     <summary type="html">组成期末不挂科指南</summary>

@@ -6,7 +6,7 @@
   <link href="https://blog.holgerbest.top/atom.xml" rel="self"/>
   
   <link href="https://blog.holgerbest.top/"/>
-  <updated>2022-02-16T13:08:29.670Z</updated>
+  <updated>2022-04-28T15:05:16.212Z</updated>
   <id>https://blog.holgerbest.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux学习笔记</title>
+    <link href="https://blog.holgerbest.top/2022/04/28/linux-study/"/>
+    <id>https://blog.holgerbest.top/2022/04/28/linux-study/</id>
+    <published>2022-04-28T11:19:35.000Z</published>
+    <updated>2022-04-28T15:05:16.212Z</updated>
+    
+    
+    <summary type="html">【日常】Linux学习笔记</summary>
+    
+    
+    
+    <category term="Linux笔记" scheme="https://blog.holgerbest.top/categories/Linux%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Linux" scheme="https://blog.holgerbest.top/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法</title>
@@ -118,7 +137,7 @@
     <link href="https://blog.holgerbest.top/2021/12/29/PDF-demo/"/>
     <id>https://blog.holgerbest.top/2021/12/29/PDF-demo/</id>
     <published>2021-12-29T09:25:22.000Z</published>
-    <updated>2021-12-29T13:43:37.930Z</updated>
+    <updated>2022-04-15T08:34:24.954Z</updated>
     
     
     <summary type="html">基于 hexo-pdf 插件实现了 PDF 的在线预览功能。</summary>
@@ -452,31 +471,6 @@
     <id>https://blog.holgerbest.top/2021/07/03/computer-ch-8-10/</id>
     <published>2021-07-02T17:39:18.000Z</published>
     <updated>2021-12-28T14:16:56.350Z</updated>
-    
-    
-    <summary type="html">组成期末不挂科指南</summary>
-    
-    
-    
-    <category term="计算机组成" scheme="https://blog.holgerbest.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
-    
-    
-    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
-    
-    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
-    
-    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="组成" scheme="https://blog.holgerbest.top/tags/%E7%BB%84%E6%88%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成知识点 - 存储系统</title>
-    <link href="https://blog.holgerbest.top/2021/07/02/computer-ch7/"/>
-    <id>https://blog.holgerbest.top/2021/07/02/computer-ch7/</id>
-    <published>2021-07-02T15:03:13.000Z</published>
-    <updated>2021-12-28T14:16:56.369Z</updated>
     
     
     <summary type="html">组成期末不挂科指南</summary>

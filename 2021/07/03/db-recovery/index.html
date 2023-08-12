@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据库系统概念 - 恢复技术 | Holger 学习小站</title><meta name="keywords" content="考试不挂科,课堂,学习笔记,DB"><meta name="author" content="Holger"><meta name="copyright" content="Holger"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="DB 期末不挂科指南 恢复技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库系统概念 - 恢复技术">
+<meta property="og:url" content="https://blog.holgerbest.top/2021/07/03/db-recovery/index.html">
+<meta property="og:site_name" content="Holger 学习小站">
+<meta property="og:description" content="DB 期末不挂科指南 恢复技术">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://repo.live.holgerbest.top/img/db6-cover-small.jpg">
+<meta property="article:published_time" content="2021-07-03T01:47:19.000Z">
+<meta property="article:modified_time" content="2023-08-12T10:01:55.370Z">
+<meta property="article:author" content="Holger">
+<meta property="article:tag" content="考试不挂科">
+<meta property="article:tag" content="课堂">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="DB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://repo.live.holgerbest.top/img/db6-cover-small.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.holgerbest.top/2021/07/03/db-recovery/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Holger","link":"链接: ","source":"来源: Holger 学习小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库系统概念 - 恢复技术',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-12 18:01:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Holger 学习小站" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Holger 学习小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">数据库系统概念 - 恢复技术</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2021-07-03T01:47:19.000Z" title="undefined 2021-07-03 09:47:19">2021-07-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">数据库系统概念</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库系统概念 - 恢复技术"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><div class="note success flat"><p><strong>本节内容</strong></p>
+<p>数据库的恢复技术</p>
+</div>
+<h3 id="事务"><a class="markdownIt-Anchor" href="#事务"></a> 事务</h3>
+<p><strong>事务</strong>：访问并可能更新各种数据项的一个程序执行单元。</p>
+<p>事务的<strong>ACID特性</strong>：</p>
+<ul>
+<li>原子性（Atomicity）</li>
+<li>一致性（Consistency）</li>
+<li>隔离性（Isolation）</li>
+<li>持续性（Durability ）</li>
+</ul>
+<h3 id="数据库的故障"><a class="markdownIt-Anchor" href="#数据库的故障"></a> 数据库的故障</h3>
+<p>数据库<strong>恢复</strong>：把数据库从错误状态恢复到某一已知的正确状态。</p>
+<h4 id="事务故障"><a class="markdownIt-Anchor" href="#事务故障"></a> 事务故障</h4>
+<p>事务在<strong>运行至正常终止点前被终止</strong>。分为预期、非预期。</p>
+<p><strong>恢复</strong>：<strong>撤销事务</strong>（UNDO）</p>
+<h4 id="系统故障"><a class="markdownIt-Anchor" href="#系统故障"></a> 系统故障</h4>
+<p>称为软故障，是指造成<strong>系统停止运转</strong>的任何事件，使得系统要重新启动。</p>
+<ul>
+<li>整个系统的正常运行突然被破坏</li>
+<li>所有正在运行的事务都非正常终止</li>
+<li>不破坏数据库</li>
+<li>内存中数据库缓冲区的信息全部丢失</li>
+</ul>
+<p>常见原因：系统断电、硬件错误</p>
+<p><strong>恢复</strong>：</p>
+<ul>
+<li>事务<strong>未提交</strong>：强行<strong>撤销</strong>（UNDO）所有<strong>未完成的事务</strong></li>
+<li>事务<strong>已提交</strong>，但缓冲区中的信息尚未完全写回到磁盘上：<strong>重做</strong>（REDO）所有<strong>已提交的事务</strong></li>
+</ul>
+<h4 id="介质故障"><a class="markdownIt-Anchor" href="#介质故障"></a> 介质故障</h4>
+<p>称为硬故障，指<strong>外存故障</strong>。</p>
+<p><strong>恢复</strong>：<strong>装入</strong>故障前的某时刻的数据<strong>副本</strong>，<strong>重做</strong>此时刻到当前所有成功的事务，将这些事务已提交的结果重新记入数据库。</p>
+<blockquote>
+<p>各类故障对数据库的影响：数据库本身被破坏；或数据库没有被破坏，但数据可能不正确。</p>
+</blockquote>
+<h3 id="数据库恢复的实现技术"><a class="markdownIt-Anchor" href="#数据库恢复的实现技术"></a> 数据库恢复的实现技术</h3>
+<p>基本原理：<strong>冗余</strong></p>
+<ul>
+<li><strong>数据转储</strong>（备份，backup）</li>
+<li>登记<strong>日志</strong>文件（logging）</li>
+</ul>
+<h4 id="数据转储备份"><a class="markdownIt-Anchor" href="#数据转储备份"></a> 数据转储（备份）</h4>
+<p>转储（<strong>备份</strong>）：DBA将整个数据库复制到磁带或另一个磁盘上保存起来的过程。</p>
+<ul>
+<li><strong>静态转储</strong>：系统<strong>无运行事务时</strong>进行的转储操作。转储开始时数据库处于一致性状态，转储期间不允许数据库的存取、修改。</li>
+<li><strong>动态转储</strong>：允许与用户事务<strong>并发</strong>进行。优点是不需等待正在运行的用户事务结束，不影响新事务的运行；缺点是不能保证一致性。需要将动态转储期间的<strong>活动记录</strong>记录下来，建立日志文件。</li>
+<li><strong>海量转储</strong>（全量备份）：每次转储<strong>全部</strong>数据库。</li>
+<li><strong>增量转储</strong>：只转储上次转储后<strong>更新的</strong>数据。</li>
+</ul>
+<h4 id="登记日志文件"><a class="markdownIt-Anchor" href="#登记日志文件"></a> 登记日志文件</h4>
+<p><strong>日志文件</strong>：记录事务对数据库的<strong>更新</strong>操作的文件。</p>
+<p><strong>格式</strong>：以<strong>记录</strong>为单位的日志文件日志；以<strong>数据块</strong>为单位的日志文件。</p>
+<p>以记录为单位的日志文件内容：</p>
+<ul>
+<li>各个事务的开始标志 BEGIN TRANSACTION</li>
+<li>各个事务的结束标记 COMMIT 或 ROLLBACK</li>
+<li>各个日志的所有更新操作</li>
+</ul>
+<p>以记录为单位的日志文件，每条<strong>日志记录</strong>内容包括：</p>
+<ul>
+<li><strong>事务标识</strong></li>
+<li>操作<strong>类型</strong>（更、删、改）</li>
+<li><strong>操作对象</strong>（记录内部标识）</li>
+<li>更新前的数据的<strong>旧值</strong>（插入时为空值）</li>
+<li>更新后的数据的<strong>新值</strong>（删除时为空值）</li>
+</ul>
+<p>日志记录<strong>基本原则</strong>：</p>
+<ul>
+<li>登记次序严格按照<strong>事务执行时间次序</strong></li>
+<li>先写<strong>日志</strong>，再写<strong>数据库</strong>（原因：两个操作是不同的操作，且之间可能会发生故障）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210703093137495.png" alt="image-20210703093137495" /></p>
+<p>上图中：</p>
+<ul>
+<li>系统在Ta时刻停止运行事务，进行数据库转储</li>
+<li>在Tb时刻转储完毕，得到Tb时刻的数据库一致性副本</li>
+<li>系统运行到<em>T</em>f时刻发生故障</li>
+<li>为恢复数据库，首先由DBA重装数据库后备副本，将数据库恢复至Tb时刻的状态</li>
+<li>重新运行自Tb～Tf时刻的所有更新事务，把数据库恢复到故障发生前的一致状态</li>
+</ul>
+<h3 id="数据库恢复的步骤"><a class="markdownIt-Anchor" href="#数据库恢复的步骤"></a> 数据库恢复的步骤</h3>
+<p>1 <strong>进行事务故障恢复</strong></p>
+<p><strong>方法</strong>：<strong>撤销</strong>（UNDO）事务对数据库的修改。</p>
+<p><strong>时机</strong>：由系统自动完成，对用户透明，无需用户干预。</p>
+<p><strong>流程</strong>：<strong>反向</strong>扫描日志文件，查找事务的更新操作，对更新操作执行<strong>逆操作</strong>，直至回到事务开始的状态。</p>
+<p>2 <strong>进行系统故障恢复</strong></p>
+<p>原因：未完成的事务对数据库的更新<strong>已经写入数据库</strong>（缓冲区满）；已提交的事务对数据库更新<strong>还留在缓冲区</strong>，没来的及写入数据库。</p>
+<p><strong>方法</strong>：<strong>UNDO</strong>——故障发生时<strong>没完成的</strong>事务，<strong>REDO</strong>——<strong>已完成的</strong>事务（不论是否写入）。</p>
+<p><strong>时机</strong>：在系统重启时自动完成，不需用户干预。</p>
+<p><strong>流程</strong>：<strong>正向</strong>扫描日志文件，建立<strong>UNDO</strong>队列（故障发生时没完成的事务）和<strong>REDO</strong>队列（已完成的事务），UNDO队列事务<strong>反向</strong>扫描log，执行<strong>逆操作</strong>，REDO队列事务<strong>正向</strong>扫描log，<strong>重新执行</strong>操作。</p>
+<p>3 <strong>协助后备副本进行介质故障恢复</strong></p>
+<p><strong>方法</strong>：装入备份文件，装入日志文件副本。</p>
+<p>时机：需要DBA的介入。</p>
+<p><strong>流程</strong>：<strong>装入</strong>最新的后备数据库<strong>副本</strong>，使数据库恢复到最近一次的备份；装载转储结束时的<strong>日志</strong>文件，重做已完成的事务。</p>
+<h3 id="具有检查点的恢复技术"><a class="markdownIt-Anchor" href="#具有检查点的恢复技术"></a> 具有检查点的恢复技术</h3>
+<p>目的：减少<strong>搜索整个日志文件</strong>的代价</p>
+<h4 id="检查点技术"><a class="markdownIt-Anchor" href="#检查点技术"></a> 检查点技术</h4>
+<p><strong>检查点记录的内容</strong>：</p>
+<ol>
+<li>建立检查点的时刻所有<strong>正在执行的事务清单</strong></li>
+<li>这些<strong>事务</strong>最近一个<strong>日志记录的地址</strong></li>
+</ol>
+<p>“<strong>重新开始文件</strong>”：§记录各个<strong>检查点记录</strong>在<strong>日志文件中的地址</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210703094036279.png" alt="image-20210703094036279" /></p>
+<p><strong>动态维护日志文件</strong>的方法：周期性地建立<strong>检查点</strong>、<strong>保存数据库状态</strong>。<br />
+当前<strong>日志缓冲区</strong>写磁盘，新建<strong>检查点记录</strong>，<strong>数据缓冲区</strong>写磁盘，检查点记录在日志文件中的地址写入<strong>重新开始文件</strong>。</p>
+<p><strong>改善效率</strong>：若事务在<strong>检查点前</strong>提交，其修改一定会写入数据库。恢复处理时不需要处理该事务。</p>
+<p>系统出现故障时，恢复子系统将根据事务的不同状态采取不同的恢复策略：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210703094312234.png" alt="image-20210703094312234" /></p>
+<h4 id="恢复策略"><a class="markdownIt-Anchor" href="#恢复策略"></a> 恢复策略</h4>
+<p>UNDO队列和REDO队列</p>
+<p>新开始的UNDO，已提交的REDO</p>
+<h3 id="数据库镜像"><a class="markdownIt-Anchor" href="#数据库镜像"></a> 数据库镜像</h3>
+<p>DBMS自动把整个数据库或其中的关键数据复制到另一个磁盘上，提高数据库的可用性。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210703094411709.png" alt="image-20210703094411709" /></p>
+<p>出现介质故障时，可由镜像磁盘继续提供使用。同时DBMS自动利用镜像磁盘数据进行数据库的恢复，不需要关闭系统和重装数据库副本。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210703094456193.png" alt="image-20210703094456193" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Holger</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.holgerbest.top/2021/07/03/db-recovery/">https://blog.holgerbest.top/2021/07/03/db-recovery/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.holgerbest.top" target="_blank">Holger 学习小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/">考试不挂科</a><a class="post-meta__tags" href="/tags/%E8%AF%BE%E5%A0%82/">课堂</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/DB/">DB</a></div><div class="post_share"><div class="social-share" data-image="https://repo.live.holgerbest.top/img/db6-cover-small.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/mm_reward.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/mm_reward.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpeg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/alipay.jpeg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/03/db-file-index/"><!--img.prev-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of previous post')--><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/db6-cover-small.jpg" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据库系统概念 - 存储、文件结构与索引</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/03/db-final-exam/"><!--img.next-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of next post')--><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/db6-cover-small.jpg" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据库系统概念 - 期末不挂科指南</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/07/03/db-final-sql/" title="数据库系统概念 - 期末 SQL 专项练习"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">数据库系统概念 - 期末 SQL 专项练习</div></div></a></div><div><a href="/2021/07/03/db-design/" title="数据库系统概念 - 数据库设计与E-R模型"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">数据库系统概念 - 数据库设计与E-R模型</div></div></a></div><div><a href="/2021/07/03/db-file-index/" title="数据库系统概念 - 存储、文件结构与索引"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">数据库系统概念 - 存储、文件结构与索引</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Holger</div><div class="author-info__description">Never late to learn.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HolgerZhang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HolgerZhang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:holgerzhang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">2023.08.12 准备开始写点blog了…… 更新日志：重新设计了【主站】；调整了【关于】、【友链】页面内容和显示逻辑。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text"> 事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%95%85%E9%9A%9C"><span class="toc-number">2.</span> <span class="toc-text"> 数据库的故障</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E6%95%85%E9%9A%9C"><span class="toc-number">2.1.</span> <span class="toc-text"> 事务故障</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C"><span class="toc-number">2.2.</span> <span class="toc-text"> 系统故障</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8B%E8%B4%A8%E6%95%85%E9%9A%9C"><span class="toc-number">2.3.</span> <span class="toc-text"> 介质故障</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%81%A2%E5%A4%8D%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%8A%80%E6%9C%AF"><span class="toc-number">3.</span> <span class="toc-text"> 数据库恢复的实现技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%82%A8%E5%A4%87%E4%BB%BD"><span class="toc-number">3.1.</span> <span class="toc-text"> 数据转储（备份）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E8%AE%B0%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text"> 登记日志文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%81%A2%E5%A4%8D%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.</span> <span class="toc-text"> 数据库恢复的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E6%9C%89%E6%A3%80%E6%9F%A5%E7%82%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%8A%80%E6%9C%AF"><span class="toc-number">5.</span> <span class="toc-text"> 具有检查点的恢复技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%82%B9%E6%8A%80%E6%9C%AF"><span class="toc-number">5.1.</span> <span class="toc-text"> 检查点技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E7%AD%96%E7%95%A5"><span class="toc-number">5.2.</span> <span class="toc-text"> 恢复策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%95%9C%E5%83%8F"><span class="toc-number">6.</span> <span class="toc-text"> 数据库镜像</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/28/linux-study/" title="Linux学习笔记">Linux学习笔记</a><time datetime="2022-04-28T11:19:35.000Z" title="发表于 2022-04-28 19:19:35">2022-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/18/alg-report/" title="算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法">算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法</a><time datetime="2022-01-18T12:00:00.000Z" title="发表于 2022-01-18 20:00:00">2022-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/14/os-report-3/" title="操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究">操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究</a><time datetime="2022-01-14T12:00:00.000Z" title="发表于 2022-01-14 20:00:00">2022-01-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/10/jiwang/" title="计算机网络-期末复习提纲">计算机网络-期末复习提纲</a><time datetime="2022-01-09T18:26:15.000Z" title="发表于 2022-01-10 02:26:15">2022-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/01/AI-02/" title="人工智能与知识工程 第二部分">人工智能与知识工程 第二部分</a><time datetime="2022-01-01T13:24:43.000Z" title="发表于 2022-01-01 21:24:43">2022-01-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgb(60,63,65)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Holger</div><div class="footer_custom_text"><div> <span><a href="/eula/">EULA</a></span> |   <span><a href="https://holgerbest.top/" target="_blank">Home</a> <span><i class="fas fa-external-link-alt"></i></span></span> |  <span><a href="http://gpt.holgerbest.top/" target="_blank">GPT (free)</a> <span><i class="fas fa-external-link-alt"></i></span></span> </div> <div><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">黑ICP备20001742号</a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline-api-theta.vercel.app/',
+      avatar: 'monsterid',
+      avatarCDN: 'https://sdn.geekzu.org/avatar/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

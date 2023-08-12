@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>人工智能与知识工程 第二部分 | Holger 学习小站</title><meta name="keywords" content="机器学习,人工智能,考试不挂科"><meta name="author" content="Holger"><meta name="copyright" content="Holger"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人工智能与知识工程复习，智能计算与机器学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能与知识工程 第二部分">
+<meta property="og:url" content="https://blog.holgerbest.top/2022/01/01/AI-02/index.html">
+<meta property="og:site_name" content="Holger 学习小站">
+<meta property="og:description" content="人工智能与知识工程复习，智能计算与机器学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://repo.live.holgerbest.top/img/FoOMNu1n5TasZEK.png">
+<meta property="article:published_time" content="2022-01-01T13:24:43.000Z">
+<meta property="article:modified_time" content="2023-08-12T10:01:55.349Z">
+<meta property="article:author" content="Holger">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="考试不挂科">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://repo.live.holgerbest.top/img/FoOMNu1n5TasZEK.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.holgerbest.top/2022/01/01/AI-02/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Holger","link":"链接: ","source":"来源: Holger 学习小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '人工智能与知识工程 第二部分',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-12 18:01:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Holger 学习小站" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Holger 学习小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">人工智能与知识工程 第二部分</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-01-01T13:24:43.000Z" title="undefined 2022-01-01 21:24:43">2022-01-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="人工智能与知识工程 第二部分"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="智能计算遗传算法"><a class="markdownIt-Anchor" href="#智能计算遗传算法"></a> 智能计算——遗传算法</h1>
+<h2 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h2>
+<ul>
+<li><strong>种群</strong>：种群是指用遗传算法求解问题时，初始给定的多个解的集合。遗传算法的求解过程是从这个子集开始的。</li>
+<li><strong>个体</strong>：个体是指种群中的单个元素，它通常由一个用于描述其基本遗传结构的数据结构来表示。例如，可以用0、1组成的长度为l的串来表示个体。</li>
+<li><strong>染色体</strong>：染色体是指对个体进行编码后所得到的编码串。染色体中的每1位称为<strong>基因</strong>，染色体上由若干个基因构成的一个有效信息段称为<strong>基因组</strong>。</li>
+<li><strong>适应度函数</strong>：适应度函数是一种用来对种群中各个个体的环境适应性进行度量的函数。其函数值是遗传算法实现优胜劣汰的主要依据</li>
+<li><strong>遗传操作</strong>：遗传操作是指作用于种群而产生新的种群的操作。标准的遗传操作包括以下三种基本形式：
+<ul>
+<li><strong>选择</strong>（Selection）</li>
+<li><strong>交叉</strong>（Crossover）</li>
+<li><strong>变异</strong>（Mutation） ：对选中个体的染色体中的某些基因进行变动，以形成新的个体，它可增强种群的<strong>多样性</strong>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="算法流程"><a class="markdownIt-Anchor" href="#算法流程"></a> 算法流程</h2>
+<h3 id="遗传编码"><a class="markdownIt-Anchor" href="#遗传编码"></a> 遗传编码</h3>
+<ul>
+<li>
+<p><strong>二进制编码</strong>：二进制编码是将原问题的结构变换为染色体的<strong>位串结构</strong></p>
+<p>对应范围[𝒖_𝒎𝒊𝒏, 𝒖_𝒎𝒂𝒙]，精度为𝝈，<strong>确定需要多少位的二进制编码串能够覆盖范围内的所有数</strong></p>
+</li>
+<li>
+<p><strong>格雷编码</strong>：对二进制编码进行变换后所得到的一种编码方法</p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/ai-2-1.png" style="zoom:48%;" />
+</li>
+<li>
+<p><strong>实数编码</strong>：（高位或复杂优化问题）若干个<strong>实数</strong>表示一个个体，然后在实数空间进行遗传操作</p>
+</li>
+</ul>
+<h3 id="种群设定"><a class="markdownIt-Anchor" href="#种群设定"></a> 种群设定</h3>
+<p><strong>初始种群的产生</strong>：随机产生一定数目的个体，从中挑选最好的个体加到初始群体中。这种过程不断迭代，直到初始群体中个体数目达到了预先确定的规模。</p>
+<p><strong>种群规模的确定</strong>：</p>
+<ul>
+<li>群体规模太小，遗传算法的优化性能不太好，易陷入局部最优解。</li>
+<li>群体规模太大，计算复杂。</li>
+<li>一般取 20-100</li>
+</ul>
+<h3 id="适应度函数"><a class="markdownIt-Anchor" href="#适应度函数"></a> 适应度函数</h3>
+<p><strong>将目标函数映射成适应度函数</strong>：最大化问题取目标函数值，最小化问题取倒数。</p>
+<p><strong>欺骗问题</strong>：将所有妨碍适应度值高的个体产生，从而影响遗传算法正常工作。</p>
+<ul>
+<li>超级个体：适应度远远大于其它 =&gt; <strong>过早收敛</strong></li>
+<li>平均适应度接近最优适应值 =&gt; <strong>停滞现象</strong></li>
+</ul>
+<p>适应度函数的<strong>尺度变换</strong>（fitness scaling）或者定标：对适应度函数值域的某种<strong>映射</strong>变换。</p>
+<h3 id="选择"><a class="markdownIt-Anchor" href="#选择"></a> 选择</h3>
+<ul>
+<li><strong>适者生存</strong>：适应度越高，被选择的概率越大</li>
+<li>为了避免过快收敛到局部最优解，还需要维持种群的多样性</li>
+</ul>
+<ol>
+<li><strong>排序方法</strong>：计算每个个体的适应度后，根据<strong>适应度大小</strong>顺序对群体中个体进行排序，然后把<strong>事先设计好的概率</strong>按排序分配给个体，作为各自的选择概率。</li>
+<li><strong>轮盘赌选择</strong>：
+<ul>
+<li>按个体的选择概率产生一个轮盘，轮盘每个区的角度与个体的选择概率成比例。</li>
+<li>产生一个随机数，它落入转盘的哪个区域就选择相应的个体交叉。</li>
+</ul>
+</li>
+<li><strong>锦标赛选择方法</strong>：从群体中随机选择<strong>k</strong>个个体，将其中<strong>适应度最高的个体</strong>保存到下一代。这一过程反复执行，直到保存到下一代的个体数达到预先设定的数量为止。</li>
+<li><strong>随机竞争方法</strong>：每次按赌轮选择方法选取一对个体，然后让这两个个体进行竞争，适应度高者获胜。如此反复，直到选满为止。</li>
+<li><strong>最佳个体保存方法</strong>：把群体中适应度最高的个体<strong>不进行交叉而直接复制到下一代中</strong>，保证遗传算法终止时得到的最后结果一定是历代出现过的最高适应度的个体。</li>
+</ol>
+<h3 id="交叉"><a class="markdownIt-Anchor" href="#交叉"></a> 交叉</h3>
+<ul>
+<li><strong>二进制交叉</strong>：二进制编码情况下所采用的交叉操作
+<ul>
+<li><strong>单点交叉</strong>：在两个父代个体的编码串中随机设定一个交叉点，然后对这两个父代个体交叉点<strong>前面或后面</strong>部分的基因进行交换</li>
+<li><strong>两点交叉</strong>：先在两个父代个体的编码串中随机设定两个交叉点，然后再按这两个交叉点进行部分基因交换，生成子代中的两个新的个体</li>
+<li><strong>多点交叉</strong></li>
+<li><strong>均匀交叉</strong>：随机生成一个与父串具有相同长度，并被称为交叉模版（或交叉掩码）的二进制串，然后再利用该模版对两个父串进行交叉，即将模版中1对应的位进行交换，而0对应的位不交换，依此生成子代中的两个新的个体。</li>
+</ul>
+</li>
+<li>实值交叉：在实数编码情况下所采用的交叉操作
+<ul>
+<li><strong>离散交叉</strong>：随机选择对第k个分量以后的所有分量进行交叉</li>
+<li><strong>算术交叉</strong>：两个个体的线性组合而产生出两个新的个体</li>
+</ul>
+</li>
+</ul>
+<p><strong>交叉概率</strong>：0.25-1.00</p>
+<blockquote>
+<ul>
+<li>过高：高性能模式遭遇破坏的可能性大</li>
+<li>过低：开辟新的搜索区域能力变低</li>
+</ul>
+</blockquote>
+<h3 id="变异"><a class="markdownIt-Anchor" href="#变异"></a> 变异</h3>
+<ul>
+<li><strong>二进制变异</strong>：先<strong>随机地产生一个变异位</strong>，然后将该变异位置上的基因值由“0”变为“1”，或由“1”变为“0”，产生一个新的个体。</li>
+<li><strong>实值变异</strong>：用另外一个在规定范围内的随机实数去替换原变异位置上的基因值，产生一个新的个体。
+<ul>
+<li><strong>基于位置的变异方法</strong>：先随机地产生两个变异位置，然后将第二个变异位置上的基因<strong>移动</strong>到第一个变异位置的前面。</li>
+<li><strong>基于次序的变异</strong>：先随机地产生两个变异位置，然后<strong>交换</strong>这两个变异位置上的基因。</li>
+</ul>
+</li>
+</ul>
+<p><strong>变异概率</strong>：0.001左右</p>
+<blockquote>
+<p>变异是辅助性的搜索，变异的概率不能太大，以防止一些重要的基因丢失，而且变异太大会导致算法趋于随机搜索</p>
+</blockquote>
+
+
+	<div class="row">
+    <embed src="https://repo.live.holgerbest.top/pdf/ai-ex-6.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<h1 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h1>
+
+
+	<div class="row">
+    <embed src="https://repo.live.holgerbest.top/pdf/ai-ml-1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+	<div class="row">
+    <embed src="https://repo.live.holgerbest.top/pdf/ai-ml-2.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Holger</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.holgerbest.top/2022/01/01/AI-02/">https://blog.holgerbest.top/2022/01/01/AI-02/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.holgerbest.top" target="_blank">Holger 学习小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><a class="post-meta__tags" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a><a class="post-meta__tags" href="/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/">考试不挂科</a></div><div class="post_share"><div class="social-share" data-image="https://repo.live.holgerbest.top/img/FoOMNu1n5TasZEK.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/mm_reward.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/mm_reward.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpeg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/alipay.jpeg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/10/jiwang/"><!--img.prev-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of previous post')--><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机网络-期末复习提纲</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/29/PDF-demo/"><!--img.next-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of next post')--><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PDF Viewer Demo</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/29/AI-01/" title="人工智能与知识工程 第一部分"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-29</div><div class="title">人工智能与知识工程 第一部分</div></div></a></div><div><a href="/2022/01/10/jiwang/" title="计算机网络-期末复习提纲"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-10</div><div class="title">计算机网络-期末复习提纲</div></div></a></div><div><a href="/2021/07/03/db-final-sql/" title="数据库系统概念 - 期末 SQL 专项练习"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">数据库系统概念 - 期末 SQL 专项练习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Holger</div><div class="author-info__description">Never late to learn.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HolgerZhang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HolgerZhang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:holgerzhang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">2023.08.12 准备开始写点blog了…… 更新日志：重新设计了【主站】；调整了【关于】、【友链】页面内容和显示逻辑。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 智能计算——遗传算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 算法流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%97%E4%BC%A0%E7%BC%96%E7%A0%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 遗传编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%8D%E7%BE%A4%E8%AE%BE%E5%AE%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 种群设定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E5%BA%94%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 适应度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 交叉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E5%BC%82"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 变异</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text"> 机器学习</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/28/linux-study/" title="Linux学习笔记">Linux学习笔记</a><time datetime="2022-04-28T11:19:35.000Z" title="发表于 2022-04-28 19:19:35">2022-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/18/alg-report/" title="算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法">算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法</a><time datetime="2022-01-18T12:00:00.000Z" title="发表于 2022-01-18 20:00:00">2022-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/14/os-report-3/" title="操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究">操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究</a><time datetime="2022-01-14T12:00:00.000Z" title="发表于 2022-01-14 20:00:00">2022-01-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/10/jiwang/" title="计算机网络-期末复习提纲">计算机网络-期末复习提纲</a><time datetime="2022-01-09T18:26:15.000Z" title="发表于 2022-01-10 02:26:15">2022-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/01/AI-02/" title="人工智能与知识工程 第二部分">人工智能与知识工程 第二部分</a><time datetime="2022-01-01T13:24:43.000Z" title="发表于 2022-01-01 21:24:43">2022-01-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgb(60,63,65)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Holger</div><div class="footer_custom_text"><div> <span><a href="/eula/">EULA</a></span> |   <span><a href="https://holgerbest.top/" target="_blank">Home</a> <span><i class="fas fa-external-link-alt"></i></span></span> |  <span><a href="http://gpt.holgerbest.top/" target="_blank">GPT (free)</a> <span><i class="fas fa-external-link-alt"></i></span></span> </div> <div><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">黑ICP备20001742号</a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline-api-theta.vercel.app/',
+      avatar: 'monsterid',
+      avatarCDN: 'https://sdn.geekzu.org/avatar/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机组成知识点 - 中央处理器 | Holger 学习小站</title><meta name="keywords" content="考试不挂科,课堂,学习笔记,组成"><meta name="author" content="Holger"><meta name="copyright" content="Holger"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="组成期末不挂科指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成知识点 - 中央处理器">
+<meta property="og:url" content="https://blog.holgerbest.top/2021/07/02/computer-ch6/index.html">
+<meta property="og:site_name" content="Holger 学习小站">
+<meta property="og:description" content="组成期末不挂科指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://repo.live.holgerbest.top/img/computer-banner.jpeg">
+<meta property="article:published_time" content="2021-07-02T05:03:13.000Z">
+<meta property="article:modified_time" content="2023-08-12T10:01:55.349Z">
+<meta property="article:author" content="Holger">
+<meta property="article:tag" content="考试不挂科">
+<meta property="article:tag" content="课堂">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="组成">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://repo.live.holgerbest.top/img/computer-banner.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.holgerbest.top/2021/07/02/computer-ch6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Holger","link":"链接: ","source":"来源: Holger 学习小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机组成知识点 - 中央处理器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-12 18:01:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Holger 学习小站" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Holger 学习小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://holgerbest.top/"><i class="fa-fw fas fa-home"></i><span> 主站</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">计算机组成知识点 - 中央处理器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2021-07-02T05:03:13.000Z" title="undefined 2021-07-02 13:03:13">2021-07-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机组成知识点 - 中央处理器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="控制器的功能"><a class="markdownIt-Anchor" href="#控制器的功能"></a> 控制器的功能</h2>
+<p>控制器的功能：按每条指令的要求产生所需的<strong>控制信号</strong></p>
+<p>1、<strong>取指令</strong>：当程序已在存储器中时，首先根据程序入口取出第一条指令，为此要发出指令地址及控制信号。然后不断取出指令。<br />
+2、<strong>分析指令</strong>（解释指令、指令译码）：对当前取得的指令进行分析，指出它要求作什么操作，并产生相应的操作控制命令。<br />
+3、<strong>执行指令</strong>：根据分析指令时产生的“操作命令”和“操作数地址”形成相应的操作控制信号序列，通过CPU及输入输出设备的执行，实现每条指令的功能。<br />
+4、控制<strong>程序和数据的输入与结果输出</strong>：根据程序的安排或人的干预，在适当的时候向输入输出设备发出一些相应的命令来完成I/O功能，这实际上也是通过执行程序来完成的。<br />
+5、对<strong>异常情况和某些请求的处理</strong>： (1) “中断请求”信号；(2)DMA请求信号。</p>
+<p>控制器<strong>产生控制信号</strong>的两种方式：<strong>微程序</strong>控制、<strong>硬布线</strong>控制。</p>
+<h2 id="控制器的组成"><a class="markdownIt-Anchor" href="#控制器的组成"></a> 控制器的组成</h2>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702093136456.png" alt="image-20210702093136456" /></p>
+<p>1、<strong>程序计数器</strong>(PC)（指令地址寄存器）：存放当前<u>正在执行</u>的<strong>指令地址</strong>或<u>即将要执行的下一条</u><strong>指令地址</strong>。有指令预取功能的计算机中，增加一些PC存放要预取的指令地址。</p>
+<p><strong>形成指令地址</strong>的途径：<strong>顺序执行</strong> PC+1（若按字节编址，指令长度为4，则PC+4）；<strong>改变顺序执行程序</strong>（<strong>转移类指令</strong>形成转移地址）</p>
+<p>2、<strong>指令寄存器</strong>(IR)：存放<strong>当前正在执行的指令</strong>，以便在指令执行过程中，控制完成一条指令的全部功能</p>
+<p>3、<strong>指令译码器</strong>（操作码译码器）：对指令寄存器中的<strong>操作码</strong>进行分析解释，产生相应的<strong>控制信号</strong>。需要形成有一定时序关系的操作控制信号序列。</p>
+<p>4、<strong>脉冲源及启停线路</strong>：脉冲源产生<strong>脉冲信号</strong>作为<strong>时钟脉冲</strong>（机器周期和工作脉冲的基准信号），在机器刚加电时，还产生一个<strong>总清信号</strong>(reset)；启停线路保证<strong>可靠地送出或封锁时钟脉冲</strong>，控制时序信号的发生或停止，从而启动机器工作或使之停机。</p>
+<p>5、<strong>时序控制信号形成部件</strong>：当机器启动后，在CLK时钟作用下，根据当前正在执行的指令的需要，产生相应的<strong>时序控制信号</strong>，并根据被控功能部件的反馈信号调整时序控制信号。</p>
+<p>6、<strong>程序状态寄存器</strong>（PSR）：保存<strong>程序状态字</strong>（PSW）的寄存器。各个机器的PSW内容不完全相同。</p>
+<h2 id="指令执行过程"><a class="markdownIt-Anchor" href="#指令执行过程"></a> 指令执行过程</h2>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702102559599.png" alt="image-20210702102559599" /></p>
+<ul>
+<li>8个通用寄存器GR</li>
+<li>1个ALU</li>
+<li>4个标志触发器
+<ul>
+<li>N(负数)</li>
+<li>Z(零)</li>
+<li>V(溢出)</li>
+<li>C(进位)</li>
+</ul>
+</li>
+<li>符号
+<ul>
+<li><code>•</code>：两线相接</li>
+<li><code>o</code>：受控制的与门</li>
+<li><code>*</code>：控制命令</li>
+</ul>
+</li>
+<li>指令格式：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702102726929.png" alt="image-20210702102726929" />
+<ul>
+<li>其中，rs，rd，rs1为GR地址，Imm或Disp为立即数或偏位量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="加法指令的执行过程"><a class="markdownIt-Anchor" href="#加法指令的执行过程"></a> 加法指令的执行过程</h3>
+<blockquote>
+<p><strong>指令功能</strong>：GR中rs1地址中的数据与disp相加得到一个<strong>操作数的地址</strong>，访存并送数据寄存器DR；<br />
+GR中rs地址的<strong>数据</strong>与DR中数据相加，结果送到GR中。</p>
+</blockquote>
+<p><strong>4个机器周期</strong>：取值——计算地址——取数——运算送结果。<br />
+其中 取值 和 取数 需要访存（通过总线），计算地址 和 运算送结果在CPU内部，总线空闲。</p>
+<p>① 【所有指令都一样】从存储器<strong>取指令</strong>，<strong>送入指令寄存器</strong>，并进行<strong>指令译码</strong></p>
+<ul>
+<li>指令送地址总线：PC -&gt; AB</li>
+<li>访存读命令：W/#R=0, M/#IO=1</li>
+<li>取出的指令送指令寄存器：DB -&gt; IR</li>
+<li>程序计数器+1：PC+1</li>
+</ul>
+<p>② <strong>计算数据地址</strong>，将计算得到的有效地址<strong>送地址寄存器</strong>AR</p>
+<ul>
+<li>rs1内容和位移量送ALU：rs1 -&gt; GR, (rs1) -&gt; ALU, disp -&gt; ALU</li>
+<li>加法命令送ALU：“+”</li>
+<li>计算结果（有效地址）送地址寄存器：ALU -&gt; AR</li>
+</ul>
+<p>③ <strong>存储器取数</strong></p>
+<ul>
+<li>地址寄存器送数据地址到地址总线：AR -&gt; AB</li>
+<li>访存读命令：W/#R=0, M/#IO=1</li>
+<li>存储器读出数据后送入数据总线，打入数据寄存器：DB -&gt; DR</li>
+</ul>
+<p>④ <strong>进行加法运算</strong>，结果<strong>送通用寄存器</strong>，并根据运算结果<strong>置状态位</strong>N，Z，V，C</p>
+<ul>
+<li>rs内容和数据寄存器数据送ALU：rs -&gt; GR, (rs) -&gt; ALU, DR -&gt; ALU</li>
+<li>加法命令送ALU：“+”</li>
+<li>结果送寄存器并置状态位：rd -&gt; GR, ALU -&gt; rd, 置N, Z, V, C</li>
+</ul>
+<h3 id="条件转移指令的执行过程"><a class="markdownIt-Anchor" href="#条件转移指令的执行过程"></a> 条件转移指令的执行过程</h3>
+<blockquote>
+<p><strong>指令功能</strong>：根据<strong>状态位</strong>N，Z，V，C的状态，决定是否转换。如转移条件成立，则<strong>转移到本条指令所指定的地址</strong>，否则顺序执行下一条指令。</p>
+</blockquote>
+<p><strong>2个机器周期</strong>：取值——计算转移地址送PC</p>
+<p>① 【所有指令都一样】从存储器<strong>取指令</strong>，<strong>送入指令寄存器</strong>，并进行<strong>指令译码</strong></p>
+<ul>
+<li>指令送地址总线：PC -&gt; AB</li>
+<li>访存读命令：W/#R=0, M/#IO=1</li>
+<li>取出的指令送指令寄存器：DB -&gt; IR</li>
+<li>程序计数器+1：PC+1</li>
+</ul>
+<p>② 如转移条件成立，<strong>计算转移地址</strong>，并<strong>送PC</strong></p>
+<ul>
+<li>（采用<strong>相对寻址</strong>方式）PC和位移量送ALU：PC -&gt; ALU, disp -&gt; ALU</li>
+<li>加法命令送ALU：“+”</li>
+<li>计算结果（转移地址）送地址寄存器：ALU -&gt; PC</li>
+</ul>
+<h2 id="微程序控制"><a class="markdownIt-Anchor" href="#微程序控制"></a> 微程序控制</h2>
+<p><strong>微操作</strong>：一条指令的功能是通过<strong>按一定次序执行一系列基本操作</strong>完成的，这些基本操作称为<strong>微操作</strong>。</p>
+<p><strong>微指令</strong>：由<strong>同时发出的</strong>控制信号所执行的<strong>一组微操作</strong>。</p>
+<blockquote>
+<p>一条<strong>指令</strong>分成若干条<strong>微指令</strong>，按次序执行这些微指令，就可以实现指令的功能。</p>
+</blockquote>
+<p><strong>微程序</strong>：计算机每条指令的功能均由<strong>微指令序列</strong>解释完成，这些<strong>微指令序列的集合</strong>就叫做<strong>微程序</strong>。</p>
+<p><strong>控制存储器</strong>：存放<strong>控制命令</strong>(信号)与下一条执行的微指令地址(简称为<strong>下址</strong>)。用<strong>只读存储器</strong>(ROM)实现（原因：指令系统固定，微程序也固定）。</p>
+<blockquote>
+<p>执行一条<strong>指令</strong>实际上就是执行一段存放在<strong>控制存储器</strong>中的<strong>微程序</strong>。</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702114954003.png" alt="image-20210702114954003" /></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702115000405.png" alt="image-20210702115000405" /></p>
+<p><strong>微指令编码</strong>：将每个控制信号<strong>用1位表示</strong>：当该位为1时，表示有控制信号；为0时，表示无控制信号。对 M/#IO(22) 和 W/#R(23)，则当该位为1时，分别表示访问存储器和写；当该位为0时，分别表示IO访问和读。</p>
+<p>微指令由<strong>控制字段</strong>和<strong>下址字段</strong>组成：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702120807336.png" alt="image-20210702120807336" /></p>
+<p>微程序控制<strong>流程图</strong>：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702120934870.png" alt="image-20210702120934870" /></p>
+<h3 id="加法指令控制信号举例"><a class="markdownIt-Anchor" href="#加法指令控制信号举例"></a> 加法指令控制信号举例</h3>
+<p>(1) <strong>取指</strong>微指令 （(PC) -&gt; IR）<br />
+① <strong>指令地址送地址总线</strong>：PC -&gt; AB(1)<br />
+② 发<strong>访存</strong>控制命令：<strong>ADS(21)</strong>，M/#IO=1(22)， W/#R=0(23)；从存储器<strong>取指令送数据总线</strong>。<br />
+③ <strong>指令送指令寄存器</strong>：DB -&gt; IR(5)<br />
+④ <strong>程序计数器+1</strong>：PC+1(3)</p>
+<p>(2) <strong>计算地址</strong>微指令（(rs1) + disp -&gt; AR）<br />
+① 取两个<strong>源操作数</strong>(计算地址用)：rs1 -&gt; GR(8)，(rs1) -&gt; ALU(10)，disp -&gt; ALU(4)。<br />
+② <strong>加法</strong>运算：“+”(13)。<br />
+③ 有效地址<strong>送地址寄存器</strong>：ALU -&gt; AR(19)。</p>
+<p>(3) <strong>取数</strong>微指令 （(AR) -&gt; DR）<br />
+① <strong>数据地址送地址总线</strong>：AR -&gt; AB(20)。<br />
+② 发<strong>访存</strong>控制命令：<strong>ADS(21)</strong>， M/#IO=1(22)， W/#R=0(23)。由存储器将数据送数据总线DB。<br />
+③ <strong>数据送数据寄存器</strong>：DB -&gt; DR(6)</p>
+<p>(4) <strong>加法</strong>运算和<strong>送结果</strong>微指令 （(rs) + DR -&gt; GR）<br />
+① 两<strong>源操作数</strong>送ALU：rs -&gt; GR(9)，(rs) -&gt; ALU(11)；DR -&gt; ALU(12)。<br />
+② <strong>加法</strong>运算：“+”(13)<br />
+③ <strong>送结果</strong>：ALU -&gt; GR(17)；置N, Z, V, C。</p>
+<p><strong>微指令编码</strong>：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702155627186.png" alt="image-20210702155627186" /></p>
+<h2 id="微程序设计"><a class="markdownIt-Anchor" href="#微程序设计"></a> 微程序设计</h2>
+<blockquote>
+<p>这一部分主要关注概念。</p>
+</blockquote>
+<p>缩短微指令字长，减少微程序长度，提高执行速度。</p>
+<h3 id="微指令控制字段的编译法"><a class="markdownIt-Anchor" href="#微指令控制字段的编译法"></a> 微指令控制字段的编译法</h3>
+<p>1、<strong>直接控制法</strong>：<strong>每一位代表一个微命令</strong>，发出某个微命令将控制字段中相应位置成“1”。缺点是微指令字长过长。</p>
+<p>2、<strong>字段直接编译法</strong>：选出<strong>互斥的微指令</strong>编成一组，作为<strong>微指令字的一个字段</strong>，用二进制代码表示。微指令字字段长度为n位时，有2^n-1个互斥的微命令（000表示不发微命令）。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702121840293.png" alt="image-20210702121840293" /></p>
+<blockquote>
+<p><strong>微周期</strong>：一条微指令所需的执行时间。</p>
+<p>互斥的微指令：若干<strong>微命令</strong>在每个选用的<strong>微周期</strong>内<strong>只有一个微命令起作用</strong>。</p>
+</blockquote>
+<p>3、<strong>字段间接编译法</strong>：字段直接编译法 + 一个字段某些微命令，要<strong>兼由另一字段中的某些微命令来解释</strong>。进一步<strong>减少了指令长度</strong>，但<strong>削弱并行控制能力</strong>。</p>
+<p>4、<strong>常数源字段E</strong>：仅有几位，微指令中用来给某些部件发送常数，故有时称为<strong>发射字段</strong>。</p>
+<h3 id="微程序流的控制"><a class="markdownIt-Anchor" href="#微程序流的控制"></a> 微程序流的控制</h3>
+<ul>
+<li><strong>现行微指令</strong>：当前正在执行的微指令</li>
+<li><strong>现行微地址</strong>：现行微指令所在的控制存储器单元的地址</li>
+<li><strong>后继微指令</strong>：下一条要执行的微指令</li>
+<li><strong>后继微地址</strong>：后继微指令所在的控存单元地址</li>
+</ul>
+<h4 id="1-增量与下址字段结合产生后继微地址"><a class="markdownIt-Anchor" href="#1-增量与下址字段结合产生后继微地址"></a> 1、增量与下址字段结合产生后继微地址</h4>
+<blockquote>
+<p>机器加电后执行的第一条微指令地址（微程序入口）来自专门的<strong>硬件电路</strong></p>
+</blockquote>
+<ul>
+<li>顺序执行微指令：后继微地址由现行微地址加上一个增量(通常为1)形成</li>
+<li>非顺序执行：产生一个转移微地址</li>
+</ul>
+<p>微指令的<strong>下址字段</strong>分成两部分：<strong>转移控制字段</strong>BCF和<strong>转移地址字段</strong>BAF。微程序转移时BAF送μPC；否则μPC+1</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702122626356.png" alt="image-20210702122626356" /></p>
+<p>BAF长度两种情况：① 与μPC的位数相等，转移灵活，但增加了微指令的长度；② 比μPC短（转移点在μPC附近）原μPC与BAF组合成转移微地址，转移地址受到限制，但可缩短微指令长度。</p>
+<h4 id="2-多路转移方式"><a class="markdownIt-Anchor" href="#2-多路转移方式"></a> 2、多路转移方式</h4>
+<p><strong>多路转移</strong>：一条微指令存在<strong>多个转移分支</strong>的情况。</p>
+<ul>
+<li>在若干个微地址中选择<strong>一个作为后继微地址</strong>（例：根据操作码产生不同的后继微地址），实现电路：PROM(可编程序只读存储器)。</li>
+<li>根据某些<strong>硬件状态</strong>（运算结果所置的标志位(N，Z，V，C)、计数器状态、数据通路状态）来决定后继微地址：两路转移，四路转移。</li>
+</ul>
+<h4 id="3-微中断"><a class="markdownIt-Anchor" href="#3-微中断"></a> 3、微中断</h4>
+<p>出现微中断请求信号，完成现行指令的微程序后<strong>响应</strong>该微中断请求，这时中止当前正在执行的程序，而转去执行<strong>微中断处理程序</strong>。<strong>微中断请求信号</strong>是由<strong>程序中断请求信号</strong>引起的。</p>
+<p>当CPU响应微中断请求时，由<strong>硬件</strong>产生<strong>微中断程序的入口地址</strong>。</p>
+<h3 id="微指令格式"><a class="markdownIt-Anchor" href="#微指令格式"></a> 微指令格式</h3>
+<ol>
+<li><strong>水平型微指令</strong>：在一条微指令中定义并执行<strong>多个并行操作微命令</strong>。<u>直接控制法、字段编译法(直接、间接编译法)</u>经常应用在同一条水平型微指令中。</li>
+<li><strong>垂直型微指令</strong>：在微指令中设置有<strong>微操作码</strong>字段，采用微操作码编译法，<strong>由微操作码规定微指令的功能</strong>。</li>
+</ol>
+<p>水平型微指令与垂直型微指令的比较：水平型微指令<strong>并行</strong>操作能力强，<strong>效率</strong>高，<strong>灵活</strong>性强，<strong>微指令字长但微程序短</strong>，用户<strong>难以掌握</strong>；垂直型微指令相反。</p>
+<h3 id="微程序控制存储器"><a class="markdownIt-Anchor" href="#微程序控制存储器"></a> 微程序控制存储器</h3>
+<p>微程序控制存储器一般由<strong>只读存储器</strong>ROM构成；用RAM作为控制存储器的优点是可以修改微程序。</p>
+<p>控制存储器的操作：取微指令——执行微指令各个操作。<strong>两种方式</strong>：串行方式、并行方式。</p>
+<h3 id="微程序设计语言"><a class="markdownIt-Anchor" href="#微程序设计语言"></a> 微程序设计语言</h3>
+<ul>
+<li><strong>微程序设计语言</strong>：编制微程序的语言</li>
+<li><strong>源微程序</strong>：用微程序设计语言编制的程序</li>
+<li><strong>微编译程序</strong>：将源微程序翻译成二进制码的程序</li>
+</ul>
+<h2 id="硬布线控制"><a class="markdownIt-Anchor" href="#硬布线控制"></a> 硬布线控制</h2>
+<p><strong>硬布线控制方式</strong>（组合逻辑控制方式）：控制信号是通过<strong>逻辑电路直接连线</strong>产生。</p>
+<p><strong>操作码译码器</strong>：输入操作码，每根输出线表示一条指令，有且仅有一根线为高电位，其余均为低电位(或反之)。</p>
+<p><strong>设计过程</strong>：</p>
+<ol>
+<li>指令操作码的代码分配</li>
+<li>确定机器周期、节拍与主频</li>
+<li>确定机器周期和操作<br />
+操作控制命令名＝指令名×机器周期×节拍×条件</li>
+<li>综合所有指令的每一个操作命令（写出逻辑表达式并化简）</li>
+</ol>
+<p>硬布线逻辑的<strong>实现途径</strong>：两级门电路的实现（PLA，PAL和GAL电路）、VLSI直接实现（集成在CPU芯片中）</p>
+<p><strong>微程序控制与硬布线控制的比较</strong></p>
+<ul>
+<li><strong>实现</strong>
+<ul>
+<li>微程序采用<strong>控制存储器</strong>，控制信号存放在<strong>控存</strong>中，实现<strong>线路规整</strong></li>
+<li>硬布线由<strong>逻辑门</strong>组合实现，显得<strong>零乱且复杂</strong>，<strong>修改指令很麻烦</strong>。</li>
+</ul>
+</li>
+<li><strong>性能</strong>
+<ul>
+<li><strong>微程序</strong>控制的速度比硬布线控制的速度<strong>低</strong></li>
+<li>RISC一般选用<strong>硬布线逻辑</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="控制器的控制方式"><a class="markdownIt-Anchor" href="#控制器的控制方式"></a> 控制器的控制方式</h2>
+<ol>
+<li><strong>同步控制方式</strong>：一条已定的指令在执行时<strong>所需的机器周期数和节拍数</strong>都是<strong>固定不变</strong>的。简单、高效、成本低，但不够灵活。</li>
+<li><strong>异步控制方式</strong>：每条指令、每个微操作<strong>需要多少时间就占用多少时间</strong>。等待完成操作后发回“回答”信号或“结束”信号，再开始新的微操作。优点灵活，缺点成本高。</li>
+<li><strong>联合控制方式</strong>：同步控制和异步控制相结合的方式。各个微操作实行<strong>大部分统一</strong>（大部分操作安排在一个固定机器周期中，并在同步时序信号控制下进行）、<strong>小部分区别对待</strong>（时间难以确定的操作，则以执行部件送回的“回答”信号作为本次操作的结束）的方式。</li>
+<li><strong>人工控制</strong>：调试、开发。如：reset按键、连续执行或单条指令执行的转换开关。</li>
+</ol>
+<h2 id="流水线"><a class="markdownIt-Anchor" href="#流水线"></a> 流水线</h2>
+<blockquote>
+<p>顺序执行：优点是控制简单，但是机器各部分的利用率不高。</p>
+</blockquote>
+<p><strong>指令执行流水线</strong>的<strong>工作原理</strong>：把两条指令或若干条指令在<strong>时间上重叠起来进行</strong>，将大幅度提高程序的执行速度。</p>
+<p>两级流水线(a)与四级流水线(b)：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702160014147.png" alt="image-20210702160014147" /></p>
+<p>运算操作流水线：例如，执行浮点加法运算，可以分成“<strong>对阶</strong>”，“<strong>尾数加</strong>”及“<strong>结果规格化</strong>”三段，每一段设置有专门的逻辑电路完成指定操作，并将其输出保存在<strong>锁存器</strong>中，以保证在一个周期内流水线的输入信号不变</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702160223412.png" alt="image-20210702160223412" /></p>
+<h3 id="流水线的相关问题"><a class="markdownIt-Anchor" href="#流水线的相关问题"></a> 流水线的<strong>相关</strong>问题</h3>
+<blockquote>
+<p>流水线不能连续工作的原因：</p>
+<ol>
+<li>编译形成的程序不能发挥流水线的作用 或 存储器供应不上为连续流动所需的指令和数据</li>
+<li><strong>相关</strong>问题</li>
+</ol>
+</blockquote>
+<p><strong>数据相关</strong>：第i条指令的<strong>操作数地址</strong>即为第i-1条指令<strong>保存结果的地址</strong>，那么第i条<strong>取操作数</strong>的动作需要<strong>等待</strong>t时间才能进行，否则取得的数据是错误的。分为：<strong>存储器数据相关</strong>或<strong>寄存器数据相关</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702160852937.png" alt="数据相关" /></p>
+<p><strong>改善</strong>：一般设置<strong>相关专用通路</strong>，即当发生数据相关时，第i条指令的操作数直接从<strong>数据处理部件</strong>得到，而不是存入后再读取。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/image-20210702160905681.png" alt="相关专用通路" /></p>
+<p><strong>流水线阻塞</strong>（“气泡”）：计算机内有较多指令存在，其繁简程度不一，执行时间及流水线级数不同，相关的情况各异，有时避免不了产生<strong>不能连续工作</strong>的情况。</p>
+<p>一般来说，流水线级数越多，情况越复杂，而<strong>两级流水线则不存在数据相关现象</strong>。</p>
+<h3 id="程序转移对流水线的影响"><a class="markdownIt-Anchor" href="#程序转移对流水线的影响"></a> 程序转移对流水线的影响</h3>
+<p>遇到条件转移指令：确定转移与否的<strong>条件码</strong>往往由<strong>条件转移指令本身</strong>或由它<strong>前一条指令</strong>形成，只有<strong>流出流水线</strong>才能建立转移条件并<strong>决定下条指令地址</strong>。因此，流水线不能继续处理后面的指令而处于<strong>等待状态</strong>，因而<strong>影响流水线效率</strong>。</p>
+<p><strong>猜测法</strong>：机器先选定转移分支中的一个，按它继续取指并处理，<strong>猜对了继续执行</strong>，<strong>猜错了返回分支点</strong>（保证在分支点后的工作不能破坏原有现场）。</p>
+<p>中断请求，I/O设备故障，转入中断处理时“<strong>断流</strong>”问题：</p>
+<ul>
+<li><strong>不精确断点法</strong>：还未进入流水线的后续指令不允许进入，已在流水线中<strong>执行完毕后转入</strong>中断处理程序。</li>
+<li><strong>精确断点法</strong>（大多采用）：不待已进入流水线的指令执行完毕，<strong>尽早转入</strong>中断处理。</li>
+</ul>
+<h3 id="指令预取和乱序执行"><a class="markdownIt-Anchor" href="#指令预取和乱序执行"></a> 指令预取和乱序执行</h3>
+<ul>
+<li><strong>指令预取</strong>：（取指时间和CPU操作相比长得多）提前从存储器取出<strong>指令</strong>，暂存在CPU的硬件中。</li>
+<li><strong>指令预分析</strong>：<strong>操作数</strong>在<strong>存储器</strong>中，提前取出放在CPU<strong>数据寄存器</strong>中。</li>
+<li><strong>乱序执行</strong>：适当调整一些指令的执行顺序，以利于<strong>程序优化执行</strong>。</li>
+</ul>
+<h2 id="计算机的供电"><a class="markdownIt-Anchor" href="#计算机的供电"></a> 计算机的供电</h2>
+<ul>
+<li>计算机的<strong>直流电源</strong>是由<strong>交流电源</strong>经过<strong>整流</strong>、<strong>稳压</strong>而得到的。</li>
+<li><strong>不间断电源</strong>(UPS)：给计算机提供<strong>连续的</strong>、<strong>稳定的</strong>交流正弧波电源。分为<strong>后备式</strong>和<strong>在线式</strong>两类。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Holger</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.holgerbest.top/2021/07/02/computer-ch6/">https://blog.holgerbest.top/2021/07/02/computer-ch6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.holgerbest.top" target="_blank">Holger 学习小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/">考试不挂科</a><a class="post-meta__tags" href="/tags/%E8%AF%BE%E5%A0%82/">课堂</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/%E7%BB%84%E6%88%90/">组成</a></div><div class="post_share"><div class="social-share" data-image="https://repo.live.holgerbest.top/img/computer-banner.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/mm_reward.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/mm_reward.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpeg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/alipay.jpeg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/02/computer-ch7/"><!--img.prev-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of previous post')--><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/computer-banner.jpeg" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机组成知识点 - 存储系统</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/02/computer-final-exam/"><!--img.next-cover(src=url_for(pagination_cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of next post')--><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://repo.live.holgerbest.top/img/computer-banner.jpeg" onerror="onerror=null;src='https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机组成知识点 - 期末复习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/07/03/computer-ch-8-10/" title="计算机组成知识点 - 辅助存储器，I/O设备与系统"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">计算机组成知识点 - 辅助存储器，I/O设备与系统</div></div></a></div><div><a href="/2021/07/02/computer-ch7/" title="计算机组成知识点 - 存储系统"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-02</div><div class="title">计算机组成知识点 - 存储系统</div></div></a></div><div><a href="/2021/07/02/computer-final-exam/" title="计算机组成知识点 - 期末复习"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-02</div><div class="title">计算机组成知识点 - 期末复习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Holger</div><div class="author-info__description">Never late to learn.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HolgerZhang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HolgerZhang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:holgerzhang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">2023.08.12 准备开始写点blog了…… 更新日志：重新设计了【主站】；调整了【关于】、【友链】页面内容和显示逻辑。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text"> 控制器的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text"> 控制器的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text"> 指令执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text"> 加法指令的执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> 条件转移指令的执行过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text"> 微程序控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7%E4%B8%BE%E4%BE%8B"><span class="toc-number">4.1.</span> <span class="toc-text"> 加法指令控制信号举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text"> 微程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%8C%87%E4%BB%A4%E6%8E%A7%E5%88%B6%E5%AD%97%E6%AE%B5%E7%9A%84%E7%BC%96%E8%AF%91%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text"> 微指令控制字段的编译法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="toc-number">5.2.</span> <span class="toc-text"> 微程序流的控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%A2%9E%E9%87%8F%E4%B8%8E%E4%B8%8B%E5%9D%80%E5%AD%97%E6%AE%B5%E7%BB%93%E5%90%88%E4%BA%A7%E7%94%9F%E5%90%8E%E7%BB%A7%E5%BE%AE%E5%9C%B0%E5%9D%80"><span class="toc-number">5.2.1.</span> <span class="toc-text"> 1、增量与下址字段结合产生后继微地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%A4%9A%E8%B7%AF%E8%BD%AC%E7%A7%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">5.2.2.</span> <span class="toc-text"> 2、多路转移方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%BE%AE%E4%B8%AD%E6%96%AD"><span class="toc-number">5.2.3.</span> <span class="toc-text"> 3、微中断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">5.3.</span> <span class="toc-text"> 微指令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">5.4.</span> <span class="toc-text"> 微程序控制存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80"><span class="toc-number">5.5.</span> <span class="toc-text"> 微程序设计语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E5%B8%83%E7%BA%BF%E6%8E%A7%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text"> 硬布线控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text"> 控制器的控制方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">8.</span> <span class="toc-text"> 流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">8.1.</span> <span class="toc-text"> 流水线的相关问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%BD%AC%E7%A7%BB%E5%AF%B9%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">8.2.</span> <span class="toc-text"> 程序转移对流水线的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%A2%84%E5%8F%96%E5%92%8C%E4%B9%B1%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-number">8.3.</span> <span class="toc-text"> 指令预取和乱序执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E4%BE%9B%E7%94%B5"><span class="toc-number">9.</span> <span class="toc-text"> 计算机的供电</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/28/linux-study/" title="Linux学习笔记">Linux学习笔记</a><time datetime="2022-04-28T11:19:35.000Z" title="发表于 2022-04-28 19:19:35">2022-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/18/alg-report/" title="算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法">算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法</a><time datetime="2022-01-18T12:00:00.000Z" title="发表于 2022-01-18 20:00:00">2022-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/14/os-report-3/" title="操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究">操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究</a><time datetime="2022-01-14T12:00:00.000Z" title="发表于 2022-01-14 20:00:00">2022-01-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/10/jiwang/" title="计算机网络-期末复习提纲">计算机网络-期末复习提纲</a><time datetime="2022-01-09T18:26:15.000Z" title="发表于 2022-01-10 02:26:15">2022-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/01/AI-02/" title="人工智能与知识工程 第二部分">人工智能与知识工程 第二部分</a><time datetime="2022-01-01T13:24:43.000Z" title="发表于 2022-01-01 21:24:43">2022-01-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgb(60,63,65)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Holger</div><div class="footer_custom_text"><div> <span><a href="/eula/">EULA</a></span> |   <span><a href="https://holgerbest.top/" target="_blank">Home</a> <span><i class="fas fa-external-link-alt"></i></span></span> |  <span><a href="http://gpt.holgerbest.top/" target="_blank">GPT (free)</a> <span><i class="fas fa-external-link-alt"></i></span></span> </div> <div><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">黑ICP备20001742号</a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline-api-theta.vercel.app/',
+      avatar: 'monsterid',
+      avatarCDN: 'https://sdn.geekzu.org/avatar/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

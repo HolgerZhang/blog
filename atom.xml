@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Holger 学习小站</title>
+  <icon>https://blog.holgerbest.top/img/favicon.png</icon>
+  <subtitle>Never late to learn.</subtitle>
+  <link href="https://blog.holgerbest.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.holgerbest.top/"/>
+  <updated>2023-08-12T10:01:55.416Z</updated>
+  <id>https://blog.holgerbest.top/</id>
+  
+  <author>
+    <name>Holger</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux学习笔记</title>
+    <link href="https://blog.holgerbest.top/2022/04/28/linux-study/"/>
+    <id>https://blog.holgerbest.top/2022/04/28/linux-study/</id>
+    <published>2022-04-28T11:19:35.000Z</published>
+    <updated>2023-08-12T10:01:55.416Z</updated>
+    
+    
+    <summary type="html">【日常】Linux学习笔记</summary>
+    
+    
+    
+    <category term="Linux笔记" scheme="https://blog.holgerbest.top/categories/Linux%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Linux" scheme="https://blog.holgerbest.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法分析与设计课程报告：Dijkstra——带权有向图单源最短路径算法</title>
+    <link href="https://blog.holgerbest.top/2022/01/18/alg-report/"/>
+    <id>https://blog.holgerbest.top/2022/01/18/alg-report/</id>
+    <published>2022-01-18T12:00:00.000Z</published>
+    <updated>2023-08-12T10:01:55.349Z</updated>
+    
+    
+    <summary type="html">算法分析与设计课程报告: Dijkstra——带权有向图单源最短路径算法</summary>
+    
+    
+    
+    <category term="算法分析与设计" scheme="https://blog.holgerbest.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="算法分析与设计" scheme="https://blog.holgerbest.top/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="算法" scheme="https://blog.holgerbest.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="课程报告" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究</title>
+    <link href="https://blog.holgerbest.top/2022/01/14/os-report-3/"/>
+    <id>https://blog.holgerbest.top/2022/01/14/os-report-3/</id>
+    <published>2022-01-14T12:00:00.000Z</published>
+    <updated>2023-08-12T10:01:55.416Z</updated>
+    
+    
+    <summary type="html">操作系统课程报告3：中央处理器与存储器系统速度及影响因素的探究</summary>
+    
+    
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="课程报告" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"/>
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络-期末复习提纲</title>
+    <link href="https://blog.holgerbest.top/2022/01/10/jiwang/"/>
+    <id>https://blog.holgerbest.top/2022/01/10/jiwang/</id>
+    <published>2022-01-09T18:26:15.000Z</published>
+    <updated>2023-08-12T10:01:55.401Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;https://repo.live.holgerbest.top/pdf/jwtg.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://blog.holgerbest.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="计算机网络" scheme="https://blog.holgerbest.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人工智能与知识工程 第二部分</title>
+    <link href="https://blog.holgerbest.top/2022/01/01/AI-02/"/>
+    <id>https://blog.holgerbest.top/2022/01/01/AI-02/</id>
+    <published>2022-01-01T13:24:43.000Z</published>
+    <updated>2023-08-12T10:01:55.349Z</updated>
+    
+    
+    <summary type="html">人工智能与知识工程复习，智能计算与机器学习。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://blog.holgerbest.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="机器学习" scheme="https://blog.holgerbest.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="人工智能" scheme="https://blog.holgerbest.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PDF Viewer Demo</title>
+    <link href="https://blog.holgerbest.top/2021/12/29/PDF-demo/"/>
+    <id>https://blog.holgerbest.top/2021/12/29/PDF-demo/</id>
+    <published>2021-12-29T09:25:22.000Z</published>
+    <updated>2023-08-12T10:01:55.416Z</updated>
+    
+    
+    <summary type="html">基于 hexo-pdf 插件实现了 PDF 的在线预览功能。</summary>
+    
+    
+    
+    
+    <category term="工具" scheme="https://blog.holgerbest.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Hexo" scheme="https://blog.holgerbest.top/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人工智能与知识工程 第一部分</title>
+    <link href="https://blog.holgerbest.top/2021/12/29/AI-01/"/>
+    <id>https://blog.holgerbest.top/2021/12/29/AI-01/</id>
+    <published>2021-12-29T09:07:46.000Z</published>
+    <updated>2023-08-12T10:01:55.330Z</updated>
+    
+    
+    <summary type="html">人工智能与知识工程复习，期中考试内容。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://blog.holgerbest.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="机器学习" scheme="https://blog.holgerbest.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="人工智能" scheme="https://blog.holgerbest.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统课程报告2：多线程矩阵乘法</title>
+    <link href="https://blog.holgerbest.top/2021/10/30/os-report-2/"/>
+    <id>https://blog.holgerbest.top/2021/10/30/os-report-2/</id>
+    <published>2021-10-30T12:40:03.000Z</published>
+    <updated>2023-08-11T17:27:35.869Z</updated>
+    
+    
+    <summary type="html">操作系统课程报告2：多线程矩阵乘法</summary>
+    
+    
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="课程报告" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"/>
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统课程报告1：虚拟机的安装与使用</title>
+    <link href="https://blog.holgerbest.top/2021/09/28/os-report-1/"/>
+    <id>https://blog.holgerbest.top/2021/09/28/os-report-1/</id>
+    <published>2021-09-28T12:40:03.000Z</published>
+    <updated>2023-08-12T10:01:55.416Z</updated>
+    
+    
+    <summary type="html">操作系统课程报告1：虚拟机的安装与使用</summary>
+    
+    
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="课程报告" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"/>
+    
+    <category term="操作系统" scheme="https://blog.holgerbest.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数字孪生文献速读</title>
+    <link href="https://blog.holgerbest.top/2021/07/19/digital-twin-introduction/"/>
+    <id>https://blog.holgerbest.top/2021/07/19/digital-twin-introduction/</id>
+    <published>2021-07-18T17:33:43.000Z</published>
+    <updated>2023-08-11T17:27:35.864Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;什么是数字孪生&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#什么是数字孪生&quot;&gt;&lt;/a&gt; 什么是数字孪生&lt;/h2&gt;
+&lt;p&gt;数字孪生将物理世界的各种属性映射到虚拟空间中，形成可复制、可修改、可重复操作的数字镜像，让受限于物理条件以及实体而无法重复完成的操作得以复现并预测。在生产过程中密切跟踪产品（数字孪生），并进行（实时或接近实时）模拟，根据这些模拟的结果调整生产。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="文献阅读" scheme="https://blog.holgerbest.top/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="数字孪生" scheme="https://blog.holgerbest.top/tags/%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F/"/>
+    
+    <category term="文献阅读" scheme="https://blog.holgerbest.top/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转载】详解联邦学习</title>
+    <link href="https://blog.holgerbest.top/2021/07/12/federated-learning/"/>
+    <id>https://blog.holgerbest.top/2021/07/12/federated-learning/</id>
+    <published>2021-07-11T16:30:04.000Z</published>
+    <updated>2023-08-11T17:27:35.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本质：联邦学习本质上是一种分布式机器学习技术，或机器学习框架。&lt;/p&gt;
+&lt;p&gt;目标：联邦学习的目标是在保证数据隐私安全及合法合规的基础上，实现共同建模，提升AI模型的效果。&lt;/p&gt;
+&lt;p&gt;前身：联邦学习最早在 2016</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://blog.holgerbest.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="联邦学习" scheme="https://blog.holgerbest.top/tags/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 期末 SQL 专项练习</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-final-sql/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-final-sql/</id>
+    <published>2021-07-03T15:25:29.000Z</published>
+    <updated>2023-08-12T10:01:55.377Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 SQL 专项练习</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 数据库设计与E-R模型</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-design/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-design/</id>
+    <published>2021-07-03T08:49:55.000Z</published>
+    <updated>2023-08-12T10:01:55.416Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 数据库设计与E-R模型</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 存储、文件结构与索引</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-file-index/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-file-index/</id>
+    <published>2021-07-03T04:05:05.000Z</published>
+    <updated>2023-08-12T10:01:55.407Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 存储、文件结构与索引</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 恢复技术</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-recovery/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-recovery/</id>
+    <published>2021-07-03T01:47:19.000Z</published>
+    <updated>2023-08-12T10:01:55.370Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 恢复技术</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 期末不挂科指南</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-final-exam/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-final-exam/</id>
+    <published>2021-07-03T01:05:05.000Z</published>
+    <updated>2023-08-12T10:01:55.403Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 合集</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 关系代数与 SQL</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-relation-sql/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-relation-sql/</id>
+    <published>2021-07-03T00:42:38.000Z</published>
+    <updated>2023-08-12T10:01:55.370Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 关系代数与 SQL</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 关系数据库理论</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-relation/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-relation/</id>
+    <published>2021-07-03T00:42:38.000Z</published>
+    <updated>2023-08-12T10:01:55.376Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 关系数据库理论</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库系统概念 - 基本概念</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/db-introduction/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/db-introduction/</id>
+    <published>2021-07-03T00:04:59.000Z</published>
+    <updated>2023-08-12T10:01:55.377Z</updated>
+    
+    
+    <summary type="html">DB 期末不挂科指南 基本概念</summary>
+    
+    
+    
+    <category term="数据库系统概念" scheme="https://blog.holgerbest.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="DB" scheme="https://blog.holgerbest.top/tags/DB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成知识点 - 辅助存储器，I/O设备与系统</title>
+    <link href="https://blog.holgerbest.top/2021/07/03/computer-ch-8-10/"/>
+    <id>https://blog.holgerbest.top/2021/07/03/computer-ch-8-10/</id>
+    <published>2021-07-02T17:39:18.000Z</published>
+    <updated>2023-08-12T10:01:55.349Z</updated>
+    
+    
+    <summary type="html">组成期末不挂科指南</summary>
+    
+    
+    
+    <category term="计算机组成" scheme="https://blog.holgerbest.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
+    
+    
+    <category term="考试不挂科" scheme="https://blog.holgerbest.top/tags/%E8%80%83%E8%AF%95%E4%B8%8D%E6%8C%82%E7%A7%91/"/>
+    
+    <category term="课堂" scheme="https://blog.holgerbest.top/tags/%E8%AF%BE%E5%A0%82/"/>
+    
+    <category term="学习笔记" scheme="https://blog.holgerbest.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="组成" scheme="https://blog.holgerbest.top/tags/%E7%BB%84%E6%88%90/"/>
+    
+  </entry>
+  
+</feed>
